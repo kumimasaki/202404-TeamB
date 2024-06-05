@@ -1,0 +1,130 @@
+
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #2F5597;
+    color: white;
+    padding: 20px;
+    text-align: right;
+}
+
+/* 文字 */
+.header a {
+    color: white;
+    margin-left: 20px;
+    /* 線を消す */
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ffffff;
+}
+
+.form-main {
+    background-color: #B4C7E7;
+    padding: 30px;
+    border-radius: 5px;
+    width: 500px;
+}
+
+body h1 {
+text-align: center;
+margin-top: 60px;
+margin-bottom: 20px;
+}
+
+/* 入力欄を一致する */
+.form-group {
+    /* 距離を離れる */
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+/* 入力欄を一致する */
+.form-group label {
+    flex: 1;
+    margin-right: 10px;
+}
+
+/* 入力欄を一致する */
+.form-group input[type="text"],
+.form-group input[type="file"],
+.form-group textarea,
+.form-group input[type="datetime-local"] {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+/* 詳細の幅を広くなる */
+.form-group textarea {
+    height: 100px;
+}
+
+/* ボタンを真ん中にする */
+.form-button {
+    text-align: center;
+}
+
+/* ボタンの設定 */
+.form-button button {
+    background-color: #1f3d7a;
+    color: white;
+    padding: 5px 30px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 100px;
+}
+
+/* 矢印が載せたら色が変わる */
+.form-button button:hover {
+    background-color: #3f6dbf;
+}
+
+/* 戻るボタン */
+.form-button .back-button {
+    background-color: #b0b0b0;
+    margin-right: 10px;
+}
+/* 矢印が載せたら色が変わる */
+.form-button .back-button:hover {
+    background-color: #d0d0d0;
+}
+/* 削除ボタン */
+.form-button .delete-button{
+    background-color: #640000;
+}
+.form-button .delete-button:hover{
+    background-color: #3f0000;
+}
+/* 画像の大きさ */
+.image-container {
+    width: 600px;
+    height: 200px;
+}
+.image-container img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+}
+footer {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: #203864;
+    color: white;
+    text-align: center;
+    padding: 16px 0;
+}
