@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ea">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>講座内容編集</title>
+    <link rel="stylesheet" href="ren_styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <a href="#">ユーザー名</a>
+        <a href="#">講座一覧</a>
+        <a href="#">講座登録</a>
+        <a href="#">ログアウト</a>
+    </div>
+    <h1>講座内容編集</h1>
+    <div class="main">
+        <form action="" method="post">
+            <div class="form-main">
+                <div class="form-group">
+                    <div class="image-container">
+                        <img src="text.png" alt="講座画像">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="file" id="course-image" name="course-image">
+                </div>
+                <div class="form-group">
+                    <label for="course-time">講座時間</label>
+                    <p id="course-time" name="course-time"></p>
+                </div>
+                <div class="form-group">
+                    <label for="course-name">講座名</label>
+                    <input type="text" id="course-name" name="course-name" placeholder="xx講座">
+                </div>
+                <div class="form-group">
+                    <label for="course-price">講座の金額</label>
+                    <input type="text" id="course-price" name="course-price" placeholder="円">
+                </div>
+                <div class="form-group">
+                    <label for="course-details">講座詳細</label>
+                    <textarea id="course-details" name="course-details"></textarea>
+                </div>
+                <div class="form-button">
+                    <button class="back-button" onclick="history.back();" type="button">戻る</button>
+                    <button class="edit-button">編集</button>
+                </div>
+                <div class="form-button">
+                    <form action="" method="post">
+                        <button class="delete-button">削除</button>
+                    </form>
+                </div>
+            </div>
+        </form>
+    </div>
+    <footer>
+        <small>Copyright &copy; Team B</small>
+    </footer>
+</body>
+
+</html>
