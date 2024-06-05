@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>申込み内容確認</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>logo</h1>
+        </div>
+        <ul class="logo-list">
+            <li th:text="${adminName}"></li>
+            <li><a th:href="@{/admin/course}">講座一覧</a></li>
+            <li><a th:href="@{/admin/course/register}">講座登録</a></li>
+            <li><a th:href="@{/admin/logout}">ログアウト</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="edit-success-form">
+            <div class="edit-success-form-title">
+                <h2>申込手続き</h2>
+            </div>
+            <article>
+                <ul class="requests">
+                    <li class="requests-li" th:each="blog:${blogList}">
+                            <img class="lesson-img" th:src="@{/lesson-img/{imagePath}(imagePath=${lesson.imageName})}" alt="">
+                            <img class="lesson-img" src="java.jpg" alt=""> <!--このimgはテスト用、実装する時を削除してください-->
+                            <div class="requests-form">
+                                <p class="requests-p-left">講座名:</p>
+                                <p class="requests-p" th:text="${lesson.lessonName}">123</p>  <!--文字はテスト用、実装する時「123」を削除してください-->
+                            </div>
+                            <div class="requests-form-time">
+                                <p class="requests-p-left">開催時間:</p>
+                                <p class="requests-p-time" th:text="${lesson.startTime}">13:00</p>  <!--文字はテスト用、実装する時「13:00」を削除してください-->
+                                <p class="requests-p-time">~</p>
+                                <p class="requests-p-time" th:text="${lesson.finishTime}">14:00</p>  <!--文字はテスト用、実装する時「14:00」を削除してください-->
+                            </div>
+                            <div class="requests-form">
+                                <p class="requests-p-left">講座内容:</p>
+                                <p class="requests-p" th:text="${lesson.lessonDetail}">Java</p>  <!--文字はテスト用、実装する時「Java」を削除してください-->
+                            </div>
+                            <div class="requests-form">
+                                <p class="requests-p-left">受講料:</p>
+                                <p class="requests-p" th:text="${lesson.lessonFee}">12800</p>  <!--文字はテスト用、実装する時「12800」を削除してください-->
+                                <p class="requests-p">円</p>
+                            </div>
+                    </li>
+                </ul>
+            </article>
+            <div class="user-request-btns">
+                <button class="back-btn" onclick="history.back();" type="button">戻る</button>
+                <button class="success-btn" onclick="location.href='/user/request/confirm'">申し込み内容を確認</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <small>&copy; TeamB</small>
+        </div>
+    </footer>
+</body>
+</html>
