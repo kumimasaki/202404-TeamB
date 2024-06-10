@@ -1,4 +1,4 @@
-package teamb.com.controller;
+package teamb.com.controllers;
 
 import java.util.List;
 
