@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="adminRegister.css">
+    <link rel="stylesheet" th:href="@{/css/adminRegister.css}">
 </head>
 <body>
     <header></header>
     <main>
-    <form action="" method="post">
+    <form th:action="@{/admin/register/process}" method="post">
         <p class="content" id="contentLoginText">登録</p>
         <div class="content">
             <input type="text" name="userName" placeholder="ユーザー名" required>
@@ -24,7 +24,7 @@
             <button>登録</button>
         </div>
         <div class="content"> 
-            <a href="/adminLogin.html">アカウントがあるので、ログインします。</a>
+            <a th:href="@{/admin/login}">アカウントがあるので、ログインします。</a>
         </div>
     </form>
     </main>
