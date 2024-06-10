@@ -4,25 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="coursesList.css">
+    <link rel="stylesheet" th:href="@{/css/coursesList.css}">
 </head>
 <body>
    <header>
     <ul>
-        <li></li>
+        <li th:text="${adminName}"></li>
         <li><a href="">講座一覧</a></li>
         <li><a href="">講座登録</a></li>
-        <li><a href="">ログアウト</a></li>
+        <li><a th:href="@{/admin/logout}">ログアウト</a></li>
     </ul>
    </header> 
    <main>
     <p>講座一覧</p>
     <ul>
-        <li>
-            <a href="">
-                <img src="" alt="">
-                <p></p><br>
-                <p></p>
+        <li th:each="lesson:${lessonList}">
+            <a th:href="@{/admin/course/edit/{lessonId}(lessonId=${lesson.lessonId})}">
+                <img th:src="@{/lesson-img/{imagePath}(imagePath=${lesson.imageName})}" alt="">
+                <p th:text="${lesson.lessonName}"></p><br>
+                <p th:text="${lesson.lessonDetail}"></p>
+				<p th:text="${lesson.lessonFee}"></p>
             </a>
         </li>
     </ul>
