@@ -1,261 +1,58 @@
-2024-06-07T10:02:29.994+09:00  INFO 25552 --- [TeamB] [main] teamb.com.TeamBApplication               : Starting TeamBApplication using Java 17.0.11 with PID 25552 (C:\Users\koyama\Documents\workspace-spring-tool-suite-4-4.22.1.RELEASE\TeamB\target\classes started by koyama in C:\Users\koyama\Documents\workspace-spring-tool-suite-4-4.22.1.RELEASE\TeamB)
-2024-06-07T10:02:29.996+09:00  INFO 25552 --- [TeamB] [main] teamb.com.TeamBApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-06-07T10:02:30.613+09:00  INFO 25552 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-07T10:02:30.635+09:00  INFO 25552 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 0 JPA repository interfaces.
-2024-06-07T10:02:31.108+09:00  INFO 25552 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-07T10:02:31.151+09:00  INFO 25552 --- [TeamB] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-07T10:02:31.152+09:00  INFO 25552 --- [TeamB] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-06-07T10:02:31.226+09:00  INFO 25552 --- [TeamB] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-07T10:02:31.227+09:00  INFO 25552 --- [TeamB] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1185 ms
-2024-06-07T10:02:31.400+09:00  INFO 25552 --- [TeamB] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-07T10:02:31.468+09:00  INFO 25552 --- [TeamB] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-06-07T10:02:31.510+09:00  INFO 25552 --- [TeamB] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-07T10:02:31.809+09:00  INFO 25552 --- [TeamB] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-07T10:02:31.844+09:00  INFO 25552 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-07T10:02:33.091+09:00  WARN 25552 --- [TeamB] [main] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
-
-java.lang.NullPointerException: Cannot invoke "org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(java.sql.SQLException, String)" because the return value of "org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.sqlExceptionHelper()" is null
-	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:290) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:123) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:77) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:221) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:189) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.8.jar:6.1.8]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.8.jar:6.1.8]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.8.jar:6.1.8]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.8.jar:6.1.8]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.8.jar:6.1.8]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.8.jar:6.1.8]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.0.jar:3.3.0]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.0.jar:3.3.0]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.0.jar:3.3.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.0.jar:3.3.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.0.jar:3.3.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.0.jar:3.3.0]
-	at teamb.com.TeamBApplication.main(TeamBApplication.java:10) ~[classes/:na]
-
-2024-06-07T10:02:33.126+09:00  WARN 25552 --- [TeamB] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-07T10:02:33.500+09:00  INFO 25552 --- [TeamB] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-07T10:02:33.508+09:00  INFO 25552 --- [TeamB] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-07T10:02:33.547+09:00  WARN 25552 --- [TeamB] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-07T10:02:33.861+09:00  WARN 25552 --- [TeamB] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-06-07T10:02:34.032+09:00  INFO 25552 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-06-07T10:02:34.043+09:00  INFO 25552 --- [TeamB] [main] teamb.com.TeamBApplication               : Started TeamBApplication in 4.452 seconds (process running for 5.289)
-2024-06-07T11:29:11.626+09:00  INFO 560 --- [TeamB] [main] teamb.com.TeamBApplication               : Starting TeamBApplication using Java 17.0.11 with PID 560 (/Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB/target/classes started by gaojiahui in /Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB)
-2024-06-07T11:29:11.627+09:00  INFO 560 --- [TeamB] [main] teamb.com.TeamBApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-06-07T11:29:11.919+09:00  INFO 560 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-07T11:29:11.927+09:00  INFO 560 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
-2024-06-07T11:29:12.122+09:00  INFO 560 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-07T11:29:12.131+09:00  INFO 560 --- [TeamB] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-07T11:29:12.131+09:00  INFO 560 --- [TeamB] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-06-07T11:29:12.159+09:00  INFO 560 --- [TeamB] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-07T11:29:12.159+09:00  INFO 560 --- [TeamB] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 514 ms
-2024-06-07T11:29:12.234+09:00  INFO 560 --- [TeamB] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-07T11:29:12.262+09:00  INFO 560 --- [TeamB] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-06-07T11:29:12.276+09:00  INFO 560 --- [TeamB] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-07T11:29:12.400+09:00  INFO 560 --- [TeamB] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-07T11:29:12.411+09:00  INFO 560 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-07T11:29:12.495+09:00  INFO 560 --- [TeamB] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@3b5da0b0
-2024-06-07T11:29:12.495+09:00  INFO 560 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-07T11:29:12.519+09:00  WARN 560 --- [TeamB] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-07T11:29:12.846+09:00  INFO 560 --- [TeamB] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-07T11:29:12.921+09:00  INFO 560 --- [TeamB] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-07T11:29:12.936+09:00  WARN 560 --- [TeamB] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-07T11:29:13.045+09:00  WARN 560 --- [TeamB] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-06-07T11:29:13.101+09:00  INFO 560 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-06-07T11:29:13.106+09:00  INFO 560 --- [TeamB] [main] teamb.com.TeamBApplication               : Started TeamBApplication in 1.637 seconds (process running for 2.01)
-2024-06-07T11:29:40.492+09:00  INFO 560 --- [TeamB] [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-06-07T11:29:40.513+09:00  INFO 560 --- [TeamB] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-07T11:29:40.515+09:00  INFO 560 --- [TeamB] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-06-07T11:29:40.517+09:00  INFO 560 --- [TeamB] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-06-07T11:47:02.023+09:00  INFO 955 --- [TeamB] [main] teamb.com.TeamBApplication               : Starting TeamBApplication using Java 17.0.11 with PID 955 (/Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB/target/classes started by gaojiahui in /Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB)
-2024-06-07T11:47:02.024+09:00  INFO 955 --- [TeamB] [main] teamb.com.TeamBApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-06-07T11:47:02.257+09:00  INFO 955 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-07T11:47:02.265+09:00  INFO 955 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
-2024-06-07T11:47:02.453+09:00  INFO 955 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-07T11:47:02.460+09:00  INFO 955 --- [TeamB] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-07T11:47:02.461+09:00  INFO 955 --- [TeamB] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-06-07T11:47:02.482+09:00  INFO 955 --- [TeamB] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-07T11:47:02.482+09:00  INFO 955 --- [TeamB] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 441 ms
-2024-06-07T11:47:02.545+09:00  INFO 955 --- [TeamB] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-07T11:47:02.569+09:00  INFO 955 --- [TeamB] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-06-07T11:47:02.581+09:00  INFO 955 --- [TeamB] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-07T11:47:02.695+09:00  INFO 955 --- [TeamB] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-07T11:47:02.705+09:00  INFO 955 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-07T11:47:02.798+09:00  INFO 955 --- [TeamB] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@202f054f
-2024-06-07T11:47:02.799+09:00  INFO 955 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-07T11:47:02.821+09:00  WARN 955 --- [TeamB] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-07T11:47:03.155+09:00  INFO 955 --- [TeamB] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-07T11:47:03.220+09:00  INFO 955 --- [TeamB] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-07T11:47:03.235+09:00  WARN 955 --- [TeamB] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-07T11:47:03.342+09:00  WARN 955 --- [TeamB] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-06-07T11:47:03.399+09:00  INFO 955 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-06-07T11:47:03.404+09:00  INFO 955 --- [TeamB] [main] teamb.com.TeamBApplication               : Started TeamBApplication in 1.538 seconds (process running for 1.905)
-2024-06-07T11:55:56.466+09:00  INFO 955 --- [TeamB] [RMI TCP Connection(19)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-06-07T11:55:56.484+09:00  INFO 955 --- [TeamB] [RMI TCP Connection(19)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-07T11:55:56.489+09:00  INFO 955 --- [TeamB] [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-06-07T11:55:56.496+09:00  INFO 955 --- [TeamB] [RMI TCP Connection(19)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-06-07T11:56:20.197+09:00  INFO 1346 --- [TeamB] [main] teamb.com.TeamBApplication               : Starting TeamBApplication using Java 17.0.11 with PID 1346 (/Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB/target/classes started by gaojiahui in /Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB)
-2024-06-07T11:56:20.198+09:00  INFO 1346 --- [TeamB] [main] teamb.com.TeamBApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-06-07T11:56:20.440+09:00  INFO 1346 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-07T11:56:20.448+09:00  INFO 1346 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
-2024-06-07T11:56:20.646+09:00  INFO 1346 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-07T11:56:20.651+09:00  INFO 1346 --- [TeamB] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-07T11:56:20.652+09:00  INFO 1346 --- [TeamB] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-06-07T11:56:20.673+09:00  INFO 1346 --- [TeamB] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-07T11:56:20.673+09:00  INFO 1346 --- [TeamB] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 459 ms
-2024-06-07T11:56:20.734+09:00  INFO 1346 --- [TeamB] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-07T11:56:20.758+09:00  INFO 1346 --- [TeamB] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-06-07T11:56:20.770+09:00  INFO 1346 --- [TeamB] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-07T11:56:20.882+09:00  INFO 1346 --- [TeamB] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-07T11:56:20.892+09:00  INFO 1346 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-07T11:56:20.978+09:00  INFO 1346 --- [TeamB] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4ccdacf5
-2024-06-07T11:56:20.978+09:00  INFO 1346 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-07T11:56:20.999+09:00  WARN 1346 --- [TeamB] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-07T11:56:21.056+09:00 ERROR 1346 --- [TeamB] [main] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: Entity 'teamb.com.models.entity.TransactionHistory' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
-2024-06-07T11:56:21.056+09:00  WARN 1346 --- [TeamB] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'teamb.com.models.entity.TransactionHistory' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
-2024-06-07T11:56:21.056+09:00  INFO 1346 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-06-07T11:56:21.057+09:00  INFO 1346 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-06-07T11:56:21.058+09:00  INFO 1346 --- [TeamB] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2024-06-07T11:56:21.066+09:00  INFO 1346 --- [TeamB] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2024-06-07T11:56:21.073+09:00 ERROR 1346 --- [TeamB] [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: Entity 'teamb.com.models.entity.TransactionHistory' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1788) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:600) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:522) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:337) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:335) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:205) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:952) ~[spring-context-6.1.8.jar:6.1.8]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:624) ~[spring-context-6.1.8.jar:6.1.8]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.3.0.jar:3.3.0]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:754) ~[spring-boot-3.3.0.jar:3.3.0]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:456) ~[spring-boot-3.3.0.jar:3.3.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:335) ~[spring-boot-3.3.0.jar:3.3.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1363) ~[spring-boot-3.3.0.jar:3.3.0]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1352) ~[spring-boot-3.3.0.jar:3.3.0]
-	at teamb.com.TeamBApplication.main(TeamBApplication.java:10) ~[classes/:na]
-Caused by: org.hibernate.AnnotationException: Entity 'teamb.com.models.entity.TransactionHistory' has no identifier (every '@Entity' class must declare or inherit at least one '@Id' or '@EmbeddedId' property)
-	at org.hibernate.boot.model.internal.InheritanceState.determineDefaultAccessType(InheritanceState.java:279) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.internal.InheritanceState.getElementsToProcess(InheritanceState.java:215) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.internal.InheritanceState.postProcess(InheritanceState.java:160) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.internal.EntityBinder.handleIdentifier(EntityBinder.java:407) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.internal.EntityBinder.bindEntityClass(EntityBinder.java:248) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.internal.AnnotationBinder.bindClass(AnnotationBinder.java:399) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.source.internal.annotations.AnnotationMetadataSourceProcessorImpl.processEntityHierarchies(AnnotationMetadataSourceProcessorImpl.java:259) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess$1.processEntityHierarchies(MetadataBuildingProcess.java:281) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1431) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1502) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
-	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:75) ~[spring-orm-6.1.8.jar:6.1.8]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390) ~[spring-orm-6.1.8.jar:6.1.8]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:409) ~[spring-orm-6.1.8.jar:6.1.8]
-	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:396) ~[spring-orm-6.1.8.jar:6.1.8]
-	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366) ~[spring-orm-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1835) ~[spring-beans-6.1.8.jar:6.1.8]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1784) ~[spring-beans-6.1.8.jar:6.1.8]
-	... 15 common frames omitted
-
-2024-06-07T11:57:02.175+09:00  INFO 1361 --- [TeamB] [main] teamb.com.TeamBApplication               : Starting TeamBApplication using Java 17.0.11 with PID 1361 (/Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB/target/classes started by gaojiahui in /Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB)
-2024-06-07T11:57:02.176+09:00  INFO 1361 --- [TeamB] [main] teamb.com.TeamBApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-06-07T11:57:02.404+09:00  INFO 1361 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-07T11:57:02.412+09:00  INFO 1361 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
-2024-06-07T11:57:02.600+09:00  INFO 1361 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-07T11:57:02.612+09:00  INFO 1361 --- [TeamB] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-07T11:57:02.612+09:00  INFO 1361 --- [TeamB] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-06-07T11:57:02.632+09:00  INFO 1361 --- [TeamB] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-07T11:57:02.632+09:00  INFO 1361 --- [TeamB] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 441 ms
-2024-06-07T11:57:02.692+09:00  INFO 1361 --- [TeamB] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-07T11:57:02.713+09:00  INFO 1361 --- [TeamB] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-06-07T11:57:02.724+09:00  INFO 1361 --- [TeamB] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-07T11:57:02.831+09:00  INFO 1361 --- [TeamB] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-07T11:57:02.843+09:00  INFO 1361 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-07T11:57:02.904+09:00  INFO 1361 --- [TeamB] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2a120c88
-2024-06-07T11:57:02.905+09:00  INFO 1361 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-07T11:57:02.920+09:00  WARN 1361 --- [TeamB] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-07T11:57:03.258+09:00  INFO 1361 --- [TeamB] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-07T11:57:03.304+09:00  INFO 1361 --- [TeamB] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-07T11:57:03.320+09:00  WARN 1361 --- [TeamB] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-07T11:57:03.432+09:00  WARN 1361 --- [TeamB] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-06-07T11:57:03.491+09:00  INFO 1361 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-06-07T11:57:03.496+09:00  INFO 1361 --- [TeamB] [main] teamb.com.TeamBApplication               : Started TeamBApplication in 1.467 seconds (process running for 1.757)
-2024-06-07T13:04:47.046+09:00  INFO 1361 --- [TeamB] [RMI TCP Connection(77)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-06-07T13:04:47.069+09:00  INFO 1361 --- [TeamB] [RMI TCP Connection(77)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-07T13:04:47.072+09:00  INFO 1361 --- [TeamB] [RMI TCP Connection(77)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-06-07T13:04:47.075+09:00  INFO 1361 --- [TeamB] [RMI TCP Connection(77)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-06-07T13:10:36.988+09:00  INFO 3615 --- [TeamB] [main] teamb.com.TeamBApplication               : Starting TeamBApplication using Java 17.0.11 with PID 3615 (/Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB/target/classes started by gaojiahui in /Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB)
-2024-06-07T13:10:36.990+09:00  INFO 3615 --- [TeamB] [main] teamb.com.TeamBApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-06-07T13:10:37.221+09:00  INFO 3615 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-07T13:10:37.229+09:00  INFO 3615 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
-2024-06-07T13:10:37.421+09:00  INFO 3615 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-07T13:10:37.431+09:00  INFO 3615 --- [TeamB] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-07T13:10:37.431+09:00  INFO 3615 --- [TeamB] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-06-07T13:10:37.453+09:00  INFO 3615 --- [TeamB] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-07T13:10:37.453+09:00  INFO 3615 --- [TeamB] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 448 ms
-2024-06-07T13:10:37.516+09:00  INFO 3615 --- [TeamB] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-07T13:10:37.541+09:00  INFO 3615 --- [TeamB] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-06-07T13:10:37.554+09:00  INFO 3615 --- [TeamB] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-07T13:10:37.664+09:00  INFO 3615 --- [TeamB] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-07T13:10:37.676+09:00  INFO 3615 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-07T13:10:37.770+09:00  INFO 3615 --- [TeamB] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@18989e0
-2024-06-07T13:10:37.771+09:00  INFO 3615 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-07T13:10:37.795+09:00  WARN 3615 --- [TeamB] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-07T13:10:38.123+09:00  INFO 3615 --- [TeamB] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-07T13:10:38.173+09:00  INFO 3615 --- [TeamB] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-07T13:10:38.188+09:00  WARN 3615 --- [TeamB] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-07T13:10:38.296+09:00  WARN 3615 --- [TeamB] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-06-07T13:10:38.348+09:00  INFO 3615 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-06-07T13:10:38.352+09:00  INFO 3615 --- [TeamB] [main] teamb.com.TeamBApplication               : Started TeamBApplication in 1.525 seconds (process running for 1.908)
-2024-06-07T13:13:47.157+09:00  INFO 3615 --- [TeamB] [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-06-07T13:13:47.175+09:00  INFO 3615 --- [TeamB] [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-07T13:13:47.185+09:00  INFO 3615 --- [TeamB] [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-06-07T13:13:47.188+09:00  INFO 3615 --- [TeamB] [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2024-06-07T13:15:23.722+09:00  INFO 3736 --- [TeamB] [main] teamb.com.TeamBApplication               : Starting TeamBApplication using Java 17.0.11 with PID 3736 (/Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB/target/classes started by gaojiahui in /Users/gaojiahui/Desktop/teamProject/202404-TeamB/TeamB)
-2024-06-07T13:15:23.724+09:00  INFO 3736 --- [TeamB] [main] teamb.com.TeamBApplication               : No active profile set, falling back to 1 default profile: "default"
-2024-06-07T13:15:23.963+09:00  INFO 3736 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2024-06-07T13:15:23.973+09:00  INFO 3736 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
-2024-06-07T13:15:24.177+09:00  INFO 3736 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2024-06-07T13:15:24.187+09:00  INFO 3736 --- [TeamB] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2024-06-07T13:15:24.187+09:00  INFO 3736 --- [TeamB] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
-2024-06-07T13:15:24.207+09:00  INFO 3736 --- [TeamB] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2024-06-07T13:15:24.207+09:00  INFO 3736 --- [TeamB] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 468 ms
-2024-06-07T13:15:24.270+09:00  INFO 3736 --- [TeamB] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2024-06-07T13:15:24.294+09:00  INFO 3736 --- [TeamB] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
-2024-06-07T13:15:24.306+09:00  INFO 3736 --- [TeamB] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2024-06-07T13:15:24.415+09:00  INFO 3736 --- [TeamB] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2024-06-07T13:15:24.427+09:00  INFO 3736 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2024-06-07T13:15:24.518+09:00  INFO 3736 --- [TeamB] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@642c72cf
-2024-06-07T13:15:24.519+09:00  INFO 3736 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2024-06-07T13:15:24.539+09:00  WARN 3736 --- [TeamB] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2024-06-07T13:15:24.876+09:00  INFO 3736 --- [TeamB] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2024-06-07T13:15:24.915+09:00  INFO 3736 --- [TeamB] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2024-06-07T13:15:24.931+09:00  WARN 3736 --- [TeamB] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-06-07T13:15:25.035+09:00  WARN 3736 --- [TeamB] [main] ion$DefaultTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates, check your Thymeleaf configuration, or set spring.thymeleaf.check-template-location=false)
-2024-06-07T13:15:25.091+09:00  INFO 3736 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2024-06-07T13:15:25.096+09:00  INFO 3736 --- [TeamB] [main] teamb.com.TeamBApplication               : Started TeamBApplication in 1.53 seconds (process running for 1.89)
-2024-06-07T13:58:30.869+09:00  INFO 3736 --- [TeamB] [RMI TCP Connection(51)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2024-06-07T13:58:30.897+09:00  INFO 3736 --- [TeamB] [RMI TCP Connection(51)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2024-06-07T13:58:30.906+09:00  INFO 3736 --- [TeamB] [RMI TCP Connection(51)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2024-06-07T13:58:30.912+09:00  INFO 3736 --- [TeamB] [RMI TCP Connection(51)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-10T16:32:43.365+09:00  INFO 23300 --- [TeamB] [main] teamb.com.TeamBApplication               : Starting TeamBApplication using Java 17.0.11 with PID 23300 (C:\Users\yuche\OneDrive\Desktop\REN\202404-TeamB\TeamB\target\classes started by yuche in C:\Users\yuche\OneDrive\Desktop\REN\202404-TeamB\TeamB)
+2024-06-10T16:32:43.369+09:00  INFO 23300 --- [TeamB] [main] teamb.com.TeamBApplication               : No active profile set, falling back to 1 default profile: "default"
+2024-06-10T16:32:43.752+09:00  INFO 23300 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-10T16:32:43.792+09:00  INFO 23300 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34 ms. Found 3 JPA repository interfaces.
+2024-06-10T16:32:44.110+09:00  INFO 23300 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-10T16:32:44.119+09:00  INFO 23300 --- [TeamB] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-10T16:32:44.119+09:00  INFO 23300 --- [TeamB] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-10T16:32:44.162+09:00  INFO 23300 --- [TeamB] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-10T16:32:44.162+09:00  INFO 23300 --- [TeamB] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 765 ms
+2024-06-10T16:32:44.265+09:00  INFO 23300 --- [TeamB] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-10T16:32:44.313+09:00  INFO 23300 --- [TeamB] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-10T16:32:44.339+09:00  INFO 23300 --- [TeamB] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-10T16:32:44.569+09:00  INFO 23300 --- [TeamB] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-10T16:32:44.588+09:00  INFO 23300 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-10T16:32:44.744+09:00  INFO 23300 --- [TeamB] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6d3163a6
+2024-06-10T16:32:44.745+09:00  INFO 23300 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-10T16:32:44.785+09:00  WARN 23300 --- [TeamB] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-10T16:32:45.434+09:00  INFO 23300 --- [TeamB] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-10T16:32:45.525+09:00  INFO 23300 --- [TeamB] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-10T16:32:45.764+09:00  WARN 23300 --- [TeamB] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-10T16:32:46.052+09:00  INFO 23300 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-10T16:32:46.058+09:00  INFO 23300 --- [TeamB] [main] teamb.com.TeamBApplication               : Started TeamBApplication in 2.968 seconds (process running for 3.425)
+2024-06-10T16:32:53.651+09:00  INFO 23300 --- [TeamB] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-10T16:32:53.651+09:00  INFO 23300 --- [TeamB] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-10T16:32:53.652+09:00  INFO 23300 --- [TeamB] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-10T16:45:43.642+09:00  INFO 23300 --- [TeamB] [RMI TCP Connection(22)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-10T16:45:43.652+09:00  INFO 23300 --- [TeamB] [RMI TCP Connection(22)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-10T16:45:43.655+09:00  INFO 23300 --- [TeamB] [RMI TCP Connection(22)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-10T16:45:43.657+09:00  INFO 23300 --- [TeamB] [RMI TCP Connection(22)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-06-10T16:45:53.939+09:00  INFO 3392 --- [TeamB] [main] teamb.com.TeamBApplication               : Starting TeamBApplication using Java 17.0.11 with PID 3392 (C:\Users\yuche\OneDrive\Desktop\REN\202404-TeamB\TeamB\target\classes started by yuche in C:\Users\yuche\OneDrive\Desktop\REN\202404-TeamB\TeamB)
+2024-06-10T16:45:53.941+09:00  INFO 3392 --- [TeamB] [main] teamb.com.TeamBApplication               : No active profile set, falling back to 1 default profile: "default"
+2024-06-10T16:45:54.274+09:00  INFO 3392 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-06-10T16:45:54.311+09:00  INFO 3392 --- [TeamB] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 3 JPA repository interfaces.
+2024-06-10T16:45:54.591+09:00  INFO 3392 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-06-10T16:45:54.597+09:00  INFO 3392 --- [TeamB] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-06-10T16:45:54.597+09:00  INFO 3392 --- [TeamB] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.24]
+2024-06-10T16:45:54.632+09:00  INFO 3392 --- [TeamB] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-06-10T16:45:54.633+09:00  INFO 3392 --- [TeamB] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 668 ms
+2024-06-10T16:45:54.722+09:00  INFO 3392 --- [TeamB] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-06-10T16:45:54.755+09:00  INFO 3392 --- [TeamB] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-06-10T16:45:54.774+09:00  INFO 3392 --- [TeamB] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-06-10T16:45:54.957+09:00  INFO 3392 --- [TeamB] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-06-10T16:45:54.972+09:00  INFO 3392 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-06-10T16:45:55.105+09:00  INFO 3392 --- [TeamB] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1201e064
+2024-06-10T16:45:55.106+09:00  INFO 3392 --- [TeamB] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-06-10T16:45:55.129+09:00  WARN 3392 --- [TeamB] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-06-10T16:45:55.682+09:00  INFO 3392 --- [TeamB] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-06-10T16:45:55.705+09:00  INFO 3392 --- [TeamB] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-06-10T16:45:55.921+09:00  WARN 3392 --- [TeamB] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-06-10T16:45:56.147+09:00  INFO 3392 --- [TeamB] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-06-10T16:45:56.153+09:00  INFO 3392 --- [TeamB] [main] teamb.com.TeamBApplication               : Started TeamBApplication in 2.445 seconds (process running for 2.854)
+2024-06-10T16:46:00.686+09:00  INFO 3392 --- [TeamB] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-06-10T16:46:00.687+09:00  INFO 3392 --- [TeamB] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-06-10T16:46:00.688+09:00  INFO 3392 --- [TeamB] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-06-10T16:46:31.519+09:00  INFO 3392 --- [TeamB] [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2024-06-10T16:46:31.529+09:00  INFO 3392 --- [TeamB] [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-06-10T16:46:31.530+09:00  INFO 3392 --- [TeamB] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-06-10T16:46:31.532+09:00  INFO 3392 --- [TeamB] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
