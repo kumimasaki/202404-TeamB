@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user_cart.css">
+    <title>ユーザー登録画面</title>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <nav class="header">
+            <div class="header-inner">
+                <ul class="header-list">
+                    <li class="listItem" th:text="${}">ユーザー名(仮)</li>
+                    <li class="listItem"><a th:href="@{}">講座一覧</a></li>
+                    <li class="listItem"><a th:href="@{}">カートへ</a></li>
+                    <li class="listItem"><a th:href="@{}">購入履歴</a></li>
+                    <li class="listItem"><a th:href="@{}">ログアウト</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- メイン -->
+    <main>
+        <article>
+            <p class="sign">カート一覧</p>
+            <div class="main">
+                <ul class="course">
+                    <li >
+                        <a href="">
+                            <div class="course-list">
+                                <div class="course-img">
+                                    <img src="image/a.jpg" alt="">
+                                </div>
+                                <div class="frame">
+                                    <div class="contents">
+                                        <p>テスト1</p><br>
+                                        <p>テスト2</p><br>
+                                        <p>テスト3</p>
+                                    </div>
+                                    <div>
+                                        <button class="delete" >消去</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </article>
+        <div>
+            <button class="purchase" >購入</button>
+        </div>
+    </main>
+    <!-- フッター -->
+    <footer>
+        <div>
+            <small>&copy; TeamB</small>
+        </div>
+    </footer>
+</body>
+</html>

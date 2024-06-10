@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="user_register.css">
+    <title>ユーザー登録画面</title>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+
+    </header>
+    <!-- メイン -->
+    <main>
+        <div class="main">
+            <p class="sign">ユーザー登録</p>
+            <form class="form1" th:action="@{}" method="post">
+              <div>
+                <input class="name" type="text"  placeholder="ユーザーネーム" name="userName" id="userName" required>
+              </div>
+              <div>
+                <input class="e-mail" type="text"  placeholder="メールアドレス" name="userEmail" id="userEmail" required>
+              </div>
+              <div>
+                <input class="password" type="password"  placeholder="パスワード" name="password" id="password" required>
+              </div>
+              <div>
+                <input class="conPassword" type="password"  placeholder="パスワード確認" name="conPassword" id="conPassword" required>
+              </div>
+              <div>
+                <button class="login" >ログイン</button>
+              </div>
+              <div>
+                <a class="register" href="">ログインはこちら</a>
+              </div>  
+            </form>
+          </div>
+    </main>
+    <!-- フッター -->
+    <footer>
+        <div>
+            <small>&copy; TeamB</small>
+        </div>
+    </footer>
+</body>
+</html>
