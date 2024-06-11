@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import teamb.com.services.AdminService;
 
 @Controller
-public class AdminRegister {
+public class AdminRegisterController {
 	
 	@Autowired
 	private AdminService adminService;
