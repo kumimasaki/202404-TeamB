@@ -26,12 +26,12 @@ public class AdminLoginController {
  
  //ログイン処理
  @PostMapping("/admin/login/process")
- public String adminLoginProcess(@RequestParam String adminEamil,@RequestParam String adminPassword) {
-	 Admin admin = adminService.loginCheck(adminEamil, adminPassword);
+ public String adminLoginProcess(@RequestParam String email,@RequestParam String password) {
+	 Admin admin = adminService.loginCheck(email, password);
 	 if(admin == null) {
 		 return "adminLogin.html";
 	 }else {
-		 session.setAttribute("loginUserInfo", admin);
+		 session.setAttribute("loginAdminInfo", admin);
 		 return "redirect:/admin/course";
 	 }
  }
