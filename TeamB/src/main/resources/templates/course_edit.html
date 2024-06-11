@@ -5,23 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>講座内容編集</title>
-    <link rel="stylesheet" href="ren_styles.css">
+    <link rel="stylesheet" th:href="@{/css/ren_styles.css}">
 </head>
 
 <body>
     <div class="header">
-        <a href="#">ユーザー名</a>
-        <a href="#">講座一覧</a>
-        <a href="#">講座登録</a>
-        <a href="#">ログアウト</a>
+        <a th:href="${adminName}"></a>
+        <a th:href="@{/admin/course}">講座一覧</a>
+        <a th:href="@{/admin/course/register}">講座登録</a>
+        <a th:href="@{/admin/logout}">ログアウト</a>
     </div>
     <h1>講座内容編集</h1>
     <div class="main">
-        <form action="" method="post">
+        <form th:action="@{/admin/course/edit/process}" method="post">
             <div class="form-main">
                 <div class="form-group">
                     <div class="image-container">
-                        <img src="text.png" alt="講座画像">
+                        <img th:src="@{text.png}" alt="講座画像">
                     </div>
                 </div>
                 <div class="form-group">
@@ -29,26 +29,28 @@
                 </div>
                 <div class="form-group">
                     <label for="course-time">講座時間</label>
-                    <p id="courseTime" name="courseTime"></p>
+                    <p id="courseTime" name="courseTime" th:value="${lesson.startTime}"></p>
                 </div>
                 <div class="form-group">
                     <label for="course-name">講座名</label>
-                    <input type="text" id="courseName" name="courseName" placeholder="xx講座">
+                    <input type="text" id="courseName" name="courseName" placeholder="xx講座" th:value="${lesson.lessonName}">
                 </div>
                 <div class="form-group">
                     <label for="course-price">講座の金額</label>
-                    <input type="text" id="coursePrice" name="coursePrice" placeholder="円">
+                    <input type="text" id="coursePrice" name="coursePrice" placeholder="円" th:value="${lesson.lessonFee}">
                 </div>
                 <div class="form-group">
                     <label for="course-details">講座詳細</label>
-                    <textarea id="courseDetails" name="courseDetails"></textarea>
+                    <textarea id="courseDetails" name="courseDetails" th:text="${lesson.lessonDetail}"></textarea>
                 </div>
                 <div class="form-button">
+					<input type="hidden" name="lessonId" th:value="${lesson.lessonId}">
                     <button class="back-button" onclick="history.back();" type="button">戻る</button>
                     <button class="edit-button">編集</button>
                 </div>
                 <div class="form-button">
-                    <form action="" method="post">
+                    <form th:action="@{/admin/course/delete}" method="post">
+						<input type="hidden" name="lessonId" th:value="${lesson.lessonId}">
                         <button class="delete-button">削除</button>
                     </form>
                 </div>
