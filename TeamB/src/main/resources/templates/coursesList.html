@@ -10,8 +10,8 @@
    <header>
     <ul>
         <li th:text="${adminName}"></li>
-        <li><a href="">講座一覧</a></li>
-        <li><a href="">講座登録</a></li>
+        <li><a th:href="@{/admin/course}">講座一覧</a></li>
+        <li><a th:href="@{/admin/course/register}">講座登録</a></li>
         <li><a th:href="@{/admin/logout}">ログアウト</a></li>
     </ul>
    </header> 
