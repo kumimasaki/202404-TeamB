@@ -2,64 +2,65 @@
 <html lang="ea">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>講座内容編集</title>
-    <link rel="stylesheet" th:href="@{/css/ren_styles.css}">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>講座内容編集</title>
+	<link rel="stylesheet" th:href="@{/css/ren_styles.css}">
 </head>
 
 <body>
-    <div class="header">
-        <a th:href="${adminName}"></a>
-        <a th:href="@{/admin/course}">講座一覧</a>
-        <a th:href="@{/admin/course/register}">講座登録</a>
-        <a th:href="@{/admin/logout}">ログアウト</a>
-    </div>
-    <h1>講座内容編集</h1>
-    <div class="main">
-        <form th:action="@{/admin/course/edit/process}" method="post">
-            <div class="form-main">
-                <div class="form-group">
-                    <div class="image-container">
-                        <img th:src="@{lesson.imageName}" alt="講座画像">
-                    </div>
-                </div>
-                <div class="form-group">
-                    <input type="file" id="imageName" name="imageName">
-                </div>
-                <div class="form-group">
-                    <label for="course-time">講座時間</label>
-                    <a th:href="${lesson.startTime + '->' + lesson.finishTime}"></a>
-                </div>
-                <div class="form-group">
-                    <label for="lessonName">講座名</label>
-                    <input type="text" id="lessonName" name="lessonName" placeholder="xx講座" th:value="${lesson.lessonName}">
-                </div>
-                <div class="form-group">
-                    <label for="lessonFee">講座の金額</label>
-                    <input type="text" id="lessonFee" name="lessonFee" placeholder="円" th:value="${lesson.lessonFee}">
-                </div>
-                <div class="form-group">
-                    <label for="lessonDetail">講座詳細</label>
-                    <textarea id="lessonDetail" name="lessonDetail" th:text="${lesson.lessonDetail}"></textarea>
-                </div>
-                <div class="form-button">
+	<div class="header">
+		<a th:href="${adminName}"></a>
+		<a th:href="@{/admin/course}">講座一覧</a>
+		<a th:href="@{/admin/course/register}">講座登録</a>
+		<a th:href="@{/admin/logout}">ログアウト</a>
+	</div>
+	<h1>講座内容編集</h1>
+	<div class="main">
+		<form th:action="@{/admin/course/edit/process}" method="post" enctype="multipart/form-data">
+			<div class="form-main">
+				<div class="form-group">
+					<div class="image-container">
+						<img th:src="@{lesson.imageName}" alt="講座画像">
+					</div>
+				</div>
+				<div class="form-group">
+					<input type="file" id="imageName" name="imageName">
+				</div>
+				<div class="form-group">
+					<label for="course-time">講座時間</label>
+					<a th:href="${lesson.startTime + '->' + lesson.finishTime}"></a>
+				</div>
+				<div class="form-group">
+					<label for="lessonName">講座名</label>
+					<input type="text" id="lessonName" name="lessonName" placeholder="xx講座"
+						th:value="${lesson.lessonName}">
+				</div>
+				<div class="form-group">
+					<label for="lessonFee">講座の金額</label>
+					<input type="text" id="lessonFee" name="lessonFee" placeholder="円" th:value="${lesson.lessonFee}">
+				</div>
+				<div class="form-group">
+					<label for="lessonDetail">講座詳細</label>
+					<textarea id="lessonDetail" name="lessonDetail" th:text="${lesson.lessonDetail}"></textarea>
+				</div>
+				<div class="form-button">
 					<input type="hidden" name="lessonId" th:value="${lesson.lessonId}">
-                    <button class="back-button" onclick="history.back();" type="button">戻る</button>
-                    <button class="edit-button">編集</button>
-                </div>
-                <div class="form-button">
-                    <form th:action="@{/admin/course/delete}" method="post">
-						<input type="hidden" name="lessonId" th:value="${lesson.lessonId}">
-                        <button class="delete-button">削除</button>
-                    </form>
-                </div>
-            </div>
-        </form>
-    </div>
-    <footer>
-        <small>Copyright &copy; Team B</small>
-    </footer>
+					<button class="back-button" onclick="history.back();" type="button">戻る</button>
+					<button class="edit-button">編集</button>
+				</div>
+		</form>
+		<div class="form-button">
+			<form th:action="@{/admin/course/delete/process}" method="post">
+				<input type="hidden" name="lessonId" th:value="${lesson.lessonId}">
+				<button class="delete-button">削除</button>
+			</form>
+		</div>
+	</div>
+	</div>
+	<footer>
+		<small>Copyright &copy; Team B</small>
+	</footer>
 </body>
 
 </html>

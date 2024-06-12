@@ -27,7 +27,7 @@ public class AdminDeleteController {
 				//そうでない
 				//lessonEditへ行く 
 			 if(lessonService.deleteLesson(lessonId)) {
-				 return "adminDeleteSuccess.html";
+				 return "redirect:/admin/course";
 			 }else {
 				 return "redirect:/admin/course/edit"+lessonId;
 			 }
