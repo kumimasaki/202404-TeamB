@@ -50,25 +50,19 @@ public class LessonService {
 	
 	//更新処理のチェック
 	public boolean lessonUpdate(Long lessonId,
-			String startTime,
-			String finishTime, 
 			String lessonName, 
 			String lessonDetail, 
 			String lessonFee,
 			String imageName, 
-			String registerDate, 
 			Long adminId) {
 		if(lessonId==null) {
 			return false;
 		}else {
 			Lesson lesson = lessonDao.findByLessonId(lessonId);
-			lesson.setStartTime(startTime);
-			lesson.setFinishTime(finishTime);
 			lesson.setLessonName(lessonName);
 			lesson.setLessonDetail(lessonDetail);
 			lesson.setLessonFee(lessonFee);
 			lesson.setImageName(imageName);
-			lesson.setRegisterDate(registerDate);
 			lesson.setAdminId(adminId);
 			lessonDao.save(lesson);
 			return true;

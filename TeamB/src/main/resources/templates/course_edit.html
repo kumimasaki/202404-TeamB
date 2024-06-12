@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <label for="course-time">講座時間</label>
-                    <p id="courseTime" name="courseTime" th:value="${lesson.startTime}"></p>
+                    <p id="courseTime" name="courseTime" th:value="${lesson.startTime + '->' + lesson.finishTime}"></p>
                 </div>
                 <div class="form-group">
                     <label for="lessonName">講座名</label>
