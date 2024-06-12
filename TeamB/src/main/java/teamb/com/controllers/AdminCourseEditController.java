@@ -85,7 +85,8 @@ public class AdminCourseEditController {
 			}
 			//もし、lessonUpdateの結果がtrueの場合は、講座一覧にリダイレクト
 			if(lessonService.lessonUpdate(lessonId, lessonName, lessonDetail, lessonFee, fileName,admin.getAdminId())) {
-				return "redirect:/admin/course";
+				//return "redirect:/admin/course";
+				return "adminEditSuccess.html";
 			} else {
 				//そうでない場合、講座編集画面ににリダイレクトする
 				return "redirect:/admin/course/edit"+lessonId;
