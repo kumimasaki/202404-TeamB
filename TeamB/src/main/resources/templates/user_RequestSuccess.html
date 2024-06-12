@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>申込手続き完了</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="user_RequestSuccess.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>logo</h1>
-        </div>
-        <ul class="logo-list">
-            <li th:text="${adminName}"></li>
-            <li><a th:href="@{/admin/course}">講座一覧</a></li>
-            <li><a th:href="@{/admin/course/register}">講座登録</a></li>
-            <li><a th:href="@{/admin/logout}">ログアウト</a></li>
-        </ul>
+        <nav class="header">
+            <div class="header-inner">
+                <ul class="header-list">
+                    <li class="listItem" th:text="${}">ユーザー名(仮)</li>
+                    <li class="listItem"><a th:href="@{}">講座一覧</a></li>
+                    <li class="listItem"><a th:href="@{}">カートへ</a></li>
+                    <li class="listItem"><a th:href="@{}">購入履歴</a></li>
+                    <li class="listItem"><a th:href="@{}">ログアウト</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="edit-success-form">

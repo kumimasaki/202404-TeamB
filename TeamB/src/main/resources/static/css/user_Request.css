@@ -4,7 +4,10 @@
     margin: 0px;
     padding: 0px;
 }
-
+div{
+    /* テキストを真ん中に配置指定 */
+    text-align: center;
+}
 /* --- ヘッダー部分 ----------------------------------------------------------------------------------------------- */
 header {
     /* 要素の背景色を指定 */
@@ -57,13 +60,7 @@ li , ul , a{
 }
 
 /*------------------------共通css-------------------------*/
-body {
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
-    
-    
-}
+
 footer{
     padding: 1rem 0;
     width: 100%;
@@ -76,6 +73,8 @@ footer{
     left: 0;
 }
 
+
+/*------------------------　枠のcss-------------------------*/
 .edit-success-form{
     margin: auto;
     margin-top: 150px;
@@ -89,16 +88,15 @@ footer{
     color: white;
     background-color: #8FAADC;
 }
+
+/*------------------------user側「お申込み内容確認」画面のcss-------------------------*/
 .requests{
-    text-align: center;
+text-align: center;
 }
 .lesson-img{
     padding: 0.5rem;
     box-sizing: border-box;
     width: 50%;
-}
-.lesson-img-form{
-    text-align: center;
 }
 .requests-form{
     display: flex;
@@ -107,53 +105,15 @@ footer{
 .requests-p-left{
     text-align: left;
     width: 100px;
+    margin-left: 70px;
 }
-.requests-p-date{
-    display:  inline;            /* ブロック要素にする */
-    background-color: white;    /* 背景色指定 */
-    width:  36%;
-
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #333333;
-    border-radius: 10px;
+.requests-form-time{
+    display: flex;
+    gap: 10%;
 }
-.requests-p-time{
-    display: inline;
+.requests-p{
+    text-align: left;
 }
-.requests-p-time-form{
-    background-color: white;    /* 背景色指定 */
-    width: 36%;
-
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #333333;
-    border-radius: 10px;
-}
-.requests-p-detail{
-    background-color: white;    /* 背景色指定 */
-    width:  36%;
-
-    padding: 10px;
-    margin-top: 1px;
-    margin-bottom: 10px;
-    border: 1px solid #333333;
-    border-radius: 10px;
-}
-
-.requests-p-fee{
-    display: inline;
-}
-.requests-p-fee-form{
-    background-color: white;    /* 背景色指定 */
-    width: 36%;
-
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #333333;
-    border-radius: 10px;
-}
-
 .user-request-btns{
     display: flex;
 }

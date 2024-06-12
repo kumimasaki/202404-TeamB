@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>申込み内容確認</title>
-    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="user_course.css">
 </head>
 <body>
     <header>
-        <div class="header">
-            <a href="#">ユーザー名</a>
-            <a href="#">講座一覧</a>
-            <a href="#">カート</a>
-            <a href="#">購入履歴</a>
-            <a href="#">ログアウト</a>            
-        </div>
+        <nav class="header">
+            <div class="header-inner">
+                <ul class="header-list">
+                    <li class="listItem" th:text="${}">ユーザー名(仮)</li>
+                    <li class="listItem"><a th:href="@{}">講座一覧</a></li>
+                    <li class="listItem"><a th:href="@{}">カートへ</a></li>
+                    <li class="listItem"><a th:href="@{}">購入履歴</a></li>
+                    <li class="listItem"><a th:href="@{}">ログアウト</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="edit-success-form">

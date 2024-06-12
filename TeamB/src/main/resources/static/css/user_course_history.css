@@ -1,24 +1,58 @@
-/*------------------------共通css-------------------------*/
-li{
-    list-style-type: none;
+/* すべての要素にスタイルを適用 */
+*{
+    /* 余白の調整 */
+    margin: 0px;
+    padding: 0px;
 }
-.logo{
-    padding: 0;
+/* --- ヘッダー部分 ----------------------------------------------------------------------------------------------- */
+header {
+    /* 要素の背景色を指定 */
+    background-color: #2f5597;
+    /* 要素の高さを指定 */
+    height: 6rem;
+    /* 幅を指定 */
     width: 100%;
-    color: #2F5597;
-    background-color: #2F5597;
+    /* ヘッダーを固定 */
     position: fixed;
     top: 0;
     left: 0;
 }
-.logo-list{
-    color: white;
-    position: fixed;
-    top: 15px;
-    right: 3%;
-    display: flex;
-    gap: 100px;
+.header {
+    /* 横並びにする */
+    display: block;
+    /* 内側の幅を指定 */
+    padding-top: 2rem;
 }
+
+.header-inner {
+    /* 横並びにする */
+    display: flex;
+    justify-content: flex-end;
+    /* 幅を指定 */
+    width: 90%;
+    /* 上下左右のマージンを個別に指定するプロパティ */
+    margin: 0 auto;
+}
+
+.header-list {
+    /* 横並びにする */
+    display: flex;
+    /* 子要素を上下中央で揃える指定 */
+    align-items: center;
+    /* 行や列の間のすき間(溝)を調整 */
+    gap: 0 1.5rem;
+
+    /* 文字の調整 */
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/*------------------------共通css-------------------------*/
+li{
+    list-style-type: none;
+}
+
 footer{
     padding: 1rem 0;
     width: 100%;
