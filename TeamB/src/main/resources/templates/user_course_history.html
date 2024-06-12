@@ -8,16 +8,17 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <h1>logo</h1>
-        </div>
-        <ul class="logo-list">
-            <li th:text=""></li>
-            <li><a th:href="">講座一覧</a></li>
-            <li><a th:href="">カート</a></li>
-            <li><a th:href="">購入履歴</a></li>
-            <li><a th:href="">ログアウト</a></li>
-        </ul>
+        <nav class="header">
+            <div class="header-inner">
+                <ul class="header-list">
+                    <li class="listItem" th:text="${}">ユーザー名(仮)</li>
+                    <li class="listItem"><a th:href="@{}">講座一覧</a></li>
+                    <li class="listItem"><a th:href="@{}">カートへ</a></li>
+                    <li class="listItem"><a th:href="@{}">購入履歴</a></li>
+                    <li class="listItem"><a th:href="@{}">ログアウト</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <main>
         <div class="edit-success-form">

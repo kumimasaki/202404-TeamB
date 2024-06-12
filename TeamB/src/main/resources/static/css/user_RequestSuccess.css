@@ -57,13 +57,7 @@ li , ul , a{
 }
 
 /*------------------------共通css-------------------------*/
-body {
-    background-color: #ffffff;
-    margin: 0;
-    padding: 0;
-    
-    
-}
+
 footer{
     padding: 1rem 0;
     width: 100%;
@@ -76,6 +70,8 @@ footer{
     left: 0;
 }
 
+
+/*------------------------管理者側「講座変更完了」画面のcss-------------------------*/
 .edit-success-form{
     margin: auto;
     margin-top: 150px;
@@ -89,96 +85,21 @@ footer{
     color: white;
     background-color: #8FAADC;
 }
-.requests{
-    text-align: center;
-}
-.lesson-img{
-    padding: 0.5rem;
-    box-sizing: border-box;
-    width: 50%;
-}
-.lesson-img-form{
-    text-align: center;
-}
-.requests-form{
-    display: flex;
-    gap: 20%;
-}
-.requests-p-left{
-    text-align: left;
-    width: 100px;
-}
-.requests-p-date{
-    display:  inline;            /* ブロック要素にする */
-    background-color: white;    /* 背景色指定 */
-    width:  36%;
 
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #333333;
-    border-radius: 10px;
-}
-.requests-p-time{
-    display: inline;
-}
-.requests-p-time-form{
-    background-color: white;    /* 背景色指定 */
-    width: 36%;
-
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #333333;
-    border-radius: 10px;
-}
-.requests-p-detail{
-    background-color: white;    /* 背景色指定 */
-    width:  36%;
-
-    padding: 10px;
-    margin-top: 1px;
-    margin-bottom: 10px;
-    border: 1px solid #333333;
-    border-radius: 10px;
-}
-
-.requests-p-fee{
-    display: inline;
-}
-.requests-p-fee-form{
-    background-color: white;    /* 背景色指定 */
-    width: 36%;
-
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #333333;
-    border-radius: 10px;
-}
-
-.user-request-btns{
-    display: flex;
-}
-.success-btn{
+/*------------------------user側「申込手続きが完了」画面のcss-------------------------*/
+.request-success-btn{
     margin: auto;
     margin-top: 30px;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     text-align: center;
-    width:200px;
+    width: 400px;
     color: white;
     border: none;
     border-radius: 8px;
     background-color: #D2AB99;
     padding: 10px;
 }
-.back-btn{
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    text-align: center;
-    width: 200px;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    background-color: #9DA2AB;
-    padding: 10px;
+.request-success-text{
+    margin-top: 80px;
+    margin-bottom: 20px;
 }
-
