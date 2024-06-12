@@ -29,10 +29,9 @@ public class LessonService {
 			String lessonDetail, 
 			String lessonFee,
 			String imageName, 
-			String registerDate, 
 			Long adminId) {
 		if(lessonDao.findByLessonName(lessonName)==null) {
-			lessonDao.save(new Lesson(startTime,finishTime,lessonName,lessonDetail,lessonFee,imageName,registerDate,adminId));
+			lessonDao.save(new Lesson(startTime,finishTime,lessonName,lessonDetail,lessonFee,imageName, adminId));
 			return true;
 		}else {
 			return false;

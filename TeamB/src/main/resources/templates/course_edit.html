@@ -21,7 +21,7 @@
             <div class="form-main">
                 <div class="form-group">
                     <div class="image-container">
-                        <img th:src="@{text.png}" alt="講座画像">
+                        <img th:src="@{lesson.imageName}" alt="講座画像">
                     </div>
                 </div>
                 <div class="form-group">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <label for="course-time">講座時間</label>
-                    <p id="courseTime" name="courseTime" th:value="${lesson.startTime + '->' + lesson.finishTime}"></p>
+                    <a th:href="${lesson.startTime + '->' + lesson.finishTime}"></a>
                 </div>
                 <div class="form-group">
                     <label for="lessonName">講座名</label>

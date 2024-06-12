@@ -79,7 +79,7 @@ public class AdminCourseEditController {
 					+ imageName.getOriginalFilename();
 			//フアイルの保存
 			try {
-				Files.copy(imageName.getInputStream(), Path.of("src/main/resources/static/lesson-img/"+ fileName));
+				Files.copy(imageName.getInputStream(), Path.of("src/main/resources/static/course-img/"+ fileName));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

@@ -31,7 +31,7 @@ public class AdminCourseRegisterController {
 	@GetMapping("/admin/course/register")
 	public String getCourseRegisterPage(Model model) {
 		// セッションからログインしている人の情報をadminという変数に格納
-		Admin admin = (Admin) session.getAttribute("loginUserInfo");
+		Admin admin = (Admin) session.getAttribute("loginAdminInfo");
 		// もしadmin == null ログイン画面にリダイレクトする
 		if (admin == null) {
 			return "redirect:/admin/login";
@@ -48,7 +48,7 @@ public class AdminCourseRegisterController {
 	@PostMapping("/admin/course/register/process")
 	public String courseRegisterProcess(@RequestParam String lessonName,@RequestParam String startTime,@RequestParam String finishTime,@RequestParam String lessonFee,@RequestParam MultipartFile imageName,@RequestParam String lessonDetail) {
 		// セッションからログインしている人の情報をadminという変数に格納
-		Admin admin = (Admin) session.getAttribute("loginUserInfo");
+		Admin admin = (Admin) session.getAttribute("loginAdminInfo");
 		
 		//もし、admin == nullだったら、ログイン画面にリダイレクトする
 		//そうでない場合、画像のファイル名を取得
@@ -72,7 +72,7 @@ public class AdminCourseRegisterController {
 				e.printStackTrace();
 			}
 			
-			if(lessonService.createLesson(startTime, finishTime, lessonName, lessonDetail, lessonFee, fileName, lessonDetail, admin.getAdminId())) {
+			if(lessonService.createLesson(startTime, finishTime, lessonName, lessonDetail, lessonFee, fileName, admin.getAdminId())) {
 				return "redirect:/admin/course/list";
 			}else {
 				return "course_register.html";
