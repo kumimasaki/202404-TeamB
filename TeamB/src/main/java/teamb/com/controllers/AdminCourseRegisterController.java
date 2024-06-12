@@ -67,13 +67,13 @@ public class AdminCourseRegisterController {
 			
 			//ファイルの保存処理
 			try {
-				Files.copy(imageName.getInputStream(),Path.of("src/main/resources/static/course-img" + fileName));
+				Files.copy(imageName.getInputStream(),Path.of("src/main/resources/static/course-img/" + fileName));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			
 			if(lessonService.createLesson(startTime, finishTime, lessonName, lessonDetail, lessonFee, fileName, admin.getAdminId())) {
-				return "redirect:/admin/course/list";
+				return "redirect:/admin/course";
 			}else {
 				return "course_register.html";
 			}
