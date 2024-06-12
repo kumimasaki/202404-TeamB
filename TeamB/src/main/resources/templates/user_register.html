@@ -22,15 +22,14 @@
               <div>
                 <input class="e-mail" type="text"  placeholder="メールアドレス" name="userEmail" id="userEmail" required>
               </div>
-              <div>
-                <input class="password" type="password"  placeholder="パスワード" name="userPassword" id="userPassword" required>
-              </div>
-
+ 			  <div>
+			    <input class="conPassword" type="password"  placeholder="パスワード" name="userPassword" id="userPassword" required>
+			  </div>
               <div>
                 <button class="login" >登録</button>
               </div>
               <div>
-                <a class="register" href="">ログインはこちら</a>
+                <a class="register" th:href="@{/user/login}">ログインはこちら</a>
               </div>  
             </form>
           </div>
