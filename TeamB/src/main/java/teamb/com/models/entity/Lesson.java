@@ -29,11 +29,7 @@ public class Lesson {
 	private String lessonFee;
 	
 	//image_nameの設定
-	private String imageName;
-	
-	//register_date設定
-	private String registerDate;
-	
+	private String imageName;	
 	//admin_idの設定(FK)
 	private Long adminId;
 
@@ -43,14 +39,13 @@ public class Lesson {
 
 	//コンストラクタ(no lesson_id)
 	public Lesson(String startTime, String finishTime, String lessonName, String lessonDetail, String lessonFee,
-			String imageName, String registerDate, Long adminId) {
+			String imageName, Long adminId) {
 		this.startTime = startTime;
 		this.finishTime = finishTime;
 		this.lessonName = lessonName;
 		this.lessonDetail = lessonDetail;
 		this.lessonFee = lessonFee;
 		this.imageName = imageName;
-		this.registerDate = registerDate;
 		this.adminId = adminId;
 	}
 
@@ -110,15 +105,6 @@ public class Lesson {
 	public void setImageName(String imageName) {
 		this.imageName = imageName;
 	}
-
-	public String getRegisterDate() {
-		return registerDate;
-	}
-
-	public void setRegisterDate(String registerDate) {
-		this.registerDate = registerDate;
-	}
-
 	public Long getAdminId() {
 		return adminId;
 	}

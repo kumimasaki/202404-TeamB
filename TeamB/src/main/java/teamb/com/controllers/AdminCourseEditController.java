@@ -58,11 +58,10 @@ public class AdminCourseEditController {
 	//更新処理
 	@PostMapping("/admin/course/edit/process")
 	public String lessonUpdate(
-								@RequestParam String courseTime, 
-								@RequestParam String courseName,
-								@RequestParam String courseDetails,
-								@RequestParam String coursePrice,
-								@RequestParam MultipartFile courseImage,
+								@RequestParam String lessonName,
+								@RequestParam String lessonFee,
+								@RequestParam String lessonDetail,
+								@RequestParam MultipartFile imageName,
 								@RequestParam Long lessonId) {
 		//セッションからログインしている人の情報をadminという変数に格納
 		Admin admin = (Admin) session.getAttribute("loginAdminInfo");
@@ -77,15 +76,15 @@ public class AdminCourseEditController {
 			*その後、blogImageオプジエクトから元のフアイル名を取得し、フオ-マットされた日時文字列と連結して、fileName变数に代入
 			*/
 			String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-").format(new Date())
-					+ courseImage.getOriginalFilename();
+					+ imageName.getOriginalFilename();
 			//フアイルの保存
 			try {
-				Files.copy(courseImage.getInputStream(), Path.of("src/main/resources/static/lesson-img/"+ fileName));
+				Files.copy(imageName.getInputStream(), Path.of("src/main/resources/static/course-img/"+ fileName));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			//もし、lessonUpdateの結果がtrueの場合は、講座一覧にリダイレクト
-			if(lessonService.lessonUpdate(lessonId, courseTime, courseTime, courseName, courseDetails, coursePrice, fileName, coursePrice, admin.getAdminId())) {
+			if(lessonService.lessonUpdate(lessonId, lessonName, lessonDetail, lessonFee, fileName,admin.getAdminId())) {
 				return "redirect:/admin/course";
 			} else {
 				//そうでない場合、講座編集画面ににリダイレクトする
