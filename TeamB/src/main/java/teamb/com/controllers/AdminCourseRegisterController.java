@@ -73,7 +73,8 @@ public class AdminCourseRegisterController {
 			}
 			
 			if(lessonService.createLesson(startTime, finishTime, lessonName, lessonDetail, lessonFee, fileName, admin.getAdminId())) {
-				return "redirect:/admin/course";
+				//return "redirect:/admin/course";
+				return "adminRegisterSuccess.html";
 			}else {
 				return "course_register.html";
 			}

@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>講座変更完了</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
     <header>
         <div class="logo">
             <h1>logo</h1>
         </div>
-        <ul class="logo-list">
-            <li th:text="${adminName}"></li>
-            <li><a th:href="@{/admin/course}">講座一覧</a></li>
-            <li><a th:href="@{/admin/course/register}">講座登録</a></li>
-            <li><a th:href="@{/admin/logout}">ログアウト</a></li>
-        </ul>
+		<div class="top-header">
+		    <a href="#" th:text="${adminName}"></a>
+		    <a th:href="@{/admin/course}">講座一覧</a>
+		    <a th:href="@{/admin/course/register}">講座登録</a>
+		    <a th:href="@{/admin/logout}">ログアウト</a>
+		</div>
     </header>
     <main>
         <div class="edit-success-form">
@@ -24,8 +24,8 @@
                 <h1>講座の変更が完了しました。</h1>
             </div>
             <div class="edit-success-btns">
-                <button class="edit-success-btn1" onclick="location.href='/admin/course/edit'">講座変更を続ける</button>
-                <button class="edit-success-btn2" onclick="location.href='/admin/course'">講座一覧へ戻る</button>
+                <!--<button class="edit-success-btn1" onclick="location.href='/admin/course/edit'">講座変更を続ける</button>-->
+                <button class="edit-success-btn3" onclick="location.href='/admin/course'">講座一覧へ戻る</button>
             </div>
         </div>
     </main>

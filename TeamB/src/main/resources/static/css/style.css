@@ -2,6 +2,19 @@
 li{
     list-style-type: none;
 }
+.top-header {
+    color: white;
+    padding: 20px;
+    text-align: right;
+}
+
+/* 文字 */
+.top-header a {
+    color: white;
+    margin-left: 20px;
+    /* 線を消す */
+    text-decoration: none;
+}
 .logo{
     padding: 0;
     width: 100%;
@@ -10,14 +23,6 @@ li{
     position: fixed;
     top: 0;
     left: 0;
-}
-.logo-list{
-    color: white;
-    position: fixed;
-    top: 15px;
-    right: 3%;
-    display: flex;
-    gap: 100px;
 }
 footer{
     padding: 1rem 0;
@@ -77,14 +82,14 @@ footer{
 /*------------------------管理者側「講座変更完了」画面のcss-------------------------*/
 .edit-success-btn3{
     margin: auto;
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: 50px;
     text-align: center;
     width: 400px;
     color: white;
     border: none;
     border-radius: 8px;
-    background-color: #8F95D3;
+    background-color: #8DB38B;
     padding: 10px;
 }
 /*------------------------管理者側「講座登録完了」画面のcss-------------------------*/
