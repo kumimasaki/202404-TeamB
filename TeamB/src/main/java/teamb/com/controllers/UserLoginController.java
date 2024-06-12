@@ -23,7 +23,6 @@ public class UserLoginController {
 	// ログイン画面の表示
 	@GetMapping("/user/login")
 	public String getAdminLoginPage() {
-
 		return "user_login.html";
 	}
 

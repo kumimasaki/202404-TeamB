@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="user_login.css">
+    <link rel="stylesheet" th:href="@{/css/user_login.css}">
     <title>ユーザーログイン画面</title>
 </head>
 <body>
@@ -15,7 +15,7 @@
     <main>
         <div class="main">
             <p class="sign">ユーザーログイン</p>
-            <form class="form1" th:action="@{}" method="post">
+            <form class="form1" th:action="@{/user/login/process}" method="post">
               <div>
                 <input class="e-mail" type="text"  placeholder="メールアドレス" name="userEmail" id="userEmail" required>
               </div>
@@ -26,7 +26,7 @@
                 <button class="login" >ログイン</button>
               </div>
               <div>
-                <a class="register" href="">新規作成はこちら</a>
+                <a class="register" th:href="@{/user/register}">新規作成はこちら</a>
               </div>  
             </form>
           </div>
