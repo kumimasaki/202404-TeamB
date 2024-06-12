@@ -18,5 +18,4 @@ public interface UsersDao extends JpaRepository<Users , Long>{
 	// SELECT +FROM users WHERE userEmail = ? AND userpassword = ?
 	// 用途、ログイン処理に使用。入力したメールアドレスとパスワードが一致いているときだけデータを取得
 	Users findByUserEmailAndUserPassword(String userEmail, String userPassword);
-	
 }

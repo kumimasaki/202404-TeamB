@@ -17,19 +17,17 @@
             <p class="sign">ユーザー登録</p>
             <form class="form1" th:action="@{/user/register/process}" method="post">
               <div>
-                <input class="name" type="text"  placeholder="ユーザーネーム" name="userName" id="userName" required>
+                <input class="name" type="text"  placeholder="ユーザーネーム" name="userName"　id="userName" required>
               </div>
               <div>
                 <input class="e-mail" type="text"  placeholder="メールアドレス" name="userEmail" id="userEmail" required>
               </div>
               <div>
-                <input class="password" type="password"  placeholder="パスワード" name="password" id="password" required>
+                <input class="password" type="password"  placeholder="パスワード" name="userPassword" id="userPassword" required>
               </div>
+
               <div>
-                <input class="conPassword" type="password"  placeholder="パスワード確認" name="conPassword" id="conPassword" required>
-              </div>
-              <div>
-                <button class="login" >ログイン</button>
+                <button class="login" >登録</button>
               </div>
               <div>
                 <a class="register" href="">ログインはこちら</a>
