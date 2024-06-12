@@ -23,11 +23,33 @@ main p{
     font-size: 30px;
 }
 
-main ul{
+main li{
     width: 90%;
-    height: 130px;
+    height: 300px;
     margin: 0 auto;
     border: 1px solid black;
+    list-style: none;
+}
+
+main li a{
+	text-decoration: none;
+}
+
+main ul img{
+	width: 400px;
+	height: 300px;
+	float: left;
+	
+}
+
+main ul div{
+	display: block;
+	float: none;
+	margin-left: 500px;
+}
+
+main div p{
+	color: black;
 }
 
 footer{
