@@ -41,7 +41,7 @@ public class UserLoginController {
 			return "user_login.html";
 		} else {
 
-			session.setAttribute("loginAdminInfo", user);
+			session.setAttribute("loginUserInfo", user);
 			return "redirect:/user/course/all";
 		}
 	}
