@@ -21,20 +21,16 @@ public class Users {
 	
 	//user_passwordの設定
 	private String userPassword;
-	
-	//register_dateの設定
-	private String registerDate;
 
 	//空のコンストラクタ
 	public Users() {
 	}
 
 	//コンストラクタ(no user_id)
-	public Users(String userName, String userEmail, String userPassword, String registerDate) {
+	public Users(String userName, String userEmail, String userPassword) {
 		this.userName = userName;
 		this.userEmail = userEmail;
 		this.userPassword = userPassword;
-		this.registerDate = registerDate;
 	}
 
 	//全てのgetter setter
@@ -69,16 +65,4 @@ public class Users {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-
-	public String getRegisterDate() {
-		return registerDate;
-	}
-
-	public void setRegisterDate(String registerDate) {
-		this.registerDate = registerDate;
-	}
-	
-	
-	
-	
 }
