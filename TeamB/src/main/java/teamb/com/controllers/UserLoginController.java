@@ -22,13 +22,13 @@ public class UserLoginController {
 
 	// ログイン画面の表示
 	@GetMapping("/user/login")
-	public String getAdminLoginPage() {
+	public String getUserLoginPage() {
 		return "user_login.html";
 	}
 
 	// ログイン処理
 	@PostMapping("/user/login/process")
-	public String adminLoginProcess(@RequestParam String userEmail, @RequestParam String userPassword) {
+	public String userLoginProcess(@RequestParam String userEmail, @RequestParam String userPassword) {
 
 		// loginCheck メソッドを呼び出してその結果を admin という変数に格納
 		Users user = userService.loginCheck(userEmail, userPassword);
