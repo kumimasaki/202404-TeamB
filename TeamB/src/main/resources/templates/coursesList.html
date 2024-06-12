@@ -20,10 +20,12 @@
     <ul>
         <li th:each="lesson:${lessonList}">
             <a th:href="@{/admin/course/edit/{lessonId}(lessonId=${lesson.lessonId})}">
-                <img th:src="@{/lesson-img/{imagePath}(imagePath=${lesson.imageName})}" alt="">
-                <p th:text="${lesson.lessonName}"></p><br>
+                <img th:src="@{/course-img/{imagePath}(imagePath=${lesson.imageName})}" alt="">
+               <div>
+				 <p th:text="${lesson.lessonName}"></p><br>
                 <p th:text="${lesson.lessonDetail}"></p>
 				<p th:text="${lesson.lessonFee}"></p>
+				</div>
             </a>
         </li>
     </ul>
