@@ -62,6 +62,8 @@ public class AdminCourseEditController {
 								@RequestParam String lessonFee,
 								@RequestParam String lessonDetail,
 								@RequestParam MultipartFile imageName,
+								@RequestParam String startTime,
+								@RequestParam String finishTime,
 								@RequestParam Long lessonId) {
 		//セッションからログインしている人の情報をadminという変数に格納
 		Admin admin = (Admin) session.getAttribute("loginAdminInfo");
@@ -84,7 +86,7 @@ public class AdminCourseEditController {
 				e.printStackTrace();
 			}
 			//もし、lessonUpdateの結果がtrueの場合は、講座一覧にリダイレクト
-			if(lessonService.lessonUpdate(lessonId, lessonName, lessonDetail, lessonFee, fileName,admin.getAdminId())) {
+			if(lessonService.lessonUpdate(lessonId,startTime,finishTime, lessonName, lessonDetail, lessonFee, fileName,admin.getAdminId())) {
 				//return "redirect:/admin/course";
 				return "adminEditSuccess.html";
 			} else {

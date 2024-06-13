@@ -28,9 +28,13 @@
 					<input type="file" id="imageName" name="imageName">
 				</div>
 				<div class="form-group">
-					<label for="course-time">講座時間</label>
-					<a th:href="${lesson.startTime + '->' + lesson.finishTime}"></a>
+					<label for="course-time">講座開始時間</label>
+					<input type="datetime-local" id="startTime" name="startTime" th:value="${lesson.startTime}">
 				</div>
+				<div class="form-group">
+									<label for="course-time">講座終了時間</label>
+									<input type="datetime-local" id="finishTime" name="finishTime" th:value="${lesson.finishTime}">
+								</div>
 				<div class="form-group">
 					<label for="lessonName">講座名</label>
 					<input type="text" id="lessonName" name="lessonName" placeholder="xx講座"

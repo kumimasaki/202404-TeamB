@@ -49,6 +49,8 @@ public class LessonService {
 	
 	//更新処理のチェック
 	public boolean lessonUpdate(Long lessonId,
+			String startTime,
+			String finishTime,
 			String lessonName, 
 			String lessonDetail, 
 			String lessonFee,
