@@ -14,11 +14,11 @@
 		<nav class="header">
 			<div class="header-inner">
 				<ul class="header-list">
-					<li class="listItem" th:text=${userName}>ユーザー名(仮)</li>
-					<li class="listItem"><a th:href="@{#}">講座一覧</a></li>
+					<li class="listItem" th:text=${userName}></li>
+					<li class="listItem"><a th:href="@{/user/course/all}">講座一覧</a></li>
 					<li class="listItem"><a th:href="@{#}">カートへ</a></li>
 					<li class="listItem"><a th:href="@{#}">購入履歴</a></li>
-					<li class="listItem"><a th:href="@{#}">ログアウト</a></li>
+					<li class="listItem"><a th:href="@{/user/login}">ログアウト</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -29,11 +29,13 @@
 			<p class="sign">講座一覧</p>
 			<div class="main">
 				<ul class="course">
-					<li>
-						<a href="">
-							<img src="image/a.jpg" alt="">
-							<p>テスト1</p><br>
-							<p>テスト2</p>
+					<li th:each="lesson:${lessonList}">
+						<a th:href="@{/user/course/{lessonId}(lessonId=${lesson.lessonId})}">
+							<img th:src="@{/course-img/{imagePath}(imagePath=${lesson.imageName})}" alt="">
+							<div>
+								<p th:text="${lesson.lessonName}"></p>
+								<p th:text="￥ + ${lesson.lessonFee}"></p>
+							</div>
 						</a>
 					</li>
 				</ul>
