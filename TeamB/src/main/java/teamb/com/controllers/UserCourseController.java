@@ -8,36 +8,54 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import jakarta.servlet.http.HttpSession;
-import teamb.com.models.entity.Admin;
+import teamb.com.models.dao.LessonDao;
 import teamb.com.models.entity.Lesson;
-import teamb.com.services.LessonService;
+import teamb.com.models.entity.Users;
 
 @Controller
 public class UserCourseController {
-
+	
 	@Autowired
 	private HttpSession session;
 	
 	@Autowired
-	private LessonService lessonService;
+	private LessonDao lessonDao;
 	
 	@GetMapping("/user/course/all")
-	public String getUserCourseList(Model model) {
-		//セッションからログインしている人の情報を取得
-		Admin admin = (Admin) session.getAttribute("loginAdminInfo");
+	public String getUserCourseAll(Model model) {
 		
-		//もし、admin==null ログイン画面ににリダイレクトする
-		if(admin == null) {
-			return "redirect:/admin/login";
-		} else {
-		//そうでない場合
-		//ログインしている人の名前の情報を画面に渡して講座一覧のhtmlを表示
-			//講座の情報を取得する
-			List<Lesson> lessonList = lessonService.selectAllLessonList(admin.getAdminId());
+		Users user = (Users) session.getAttribute("loginUserInfo");
+		
+		List<Lesson> lessonList = lessonDao.findAll();
+		model.addAttribute("lessonList", lessonList);
+		
+		if(user == null) {
+			model.addAttribute("userName", null);
 			
-			model.addAttribute("adminName", admin.getAdminName());
-			model.addAttribute("lessonList", lessonList);
 			return "user_list.html";
+		} else {
+			model.addAttribute("userName", user.getUserName());
+			
+			return "user_list.html";
+		}
+	}
+	
+	@GetMapping("/user/course/{lessonId}")
+	public String getUserCourse(Model model) {
+		
+		Users user = (Users) session.getAttribute("loginUserInfo");
+		
+		List<Lesson> lessonList = lessonDao.findAll();
+		model.addAttribute("lessonList", lessonList);
+		
+		if(user == null) {
+			model.addAttribute("userName", null);
+			
+			return "user_course.html";
+		} else {
+			model.addAttribute("userName", user.getUserName());
+			
+			return "user_course.html";
 		}
 	}
 }
