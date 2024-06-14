@@ -30,8 +30,7 @@ public class UserCourseController {
 		model.addAttribute("lessonList", lessonList);
 		
 		if(user == null) {
-			model.addAttribute("userName", null);
-			
+			model.addAttribute("userName", null);	
 			return "user_list.html";
 		} else {
 			model.addAttribute("userName", user.getUserName());
