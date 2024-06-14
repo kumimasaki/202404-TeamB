@@ -59,7 +59,11 @@
             </article>
             <div class="user-request-btns">
                 <button class="back-btn" onclick="history.back();" type="button">戻る</button>
-                <button class="success-btn">カートに入れる</button>
+              <form action="/user/cart/process" method="post">
+				<input type="hidden" name="lessonId" th:value="${lesson.lessonId}">
+				  <button class="success-btn">カートに入れる</button>
+				 
+              </form>
             </div>
         </div>
     </main>
