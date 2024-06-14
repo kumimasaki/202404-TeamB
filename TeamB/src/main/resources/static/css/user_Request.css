@@ -59,6 +59,35 @@ li , ul , a{
     text-decoration: none;
 }
 
+a:visited{
+	    /* 文字の調整 */
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+a:link{
+	    /* 文字の調整 */
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #ffffff;
+	
+}
+
+a:hover{
+	/* 文字の調整 */
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(192, 192, 192);
+}
+
+a:active{
+	/* 文字の調整 */
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: rgb(192, 192, 192);
+}
+
 /*------------------------共通css-------------------------*/
 
 footer{
