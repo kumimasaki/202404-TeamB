@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="user_cart.css">
+    <link rel="stylesheet" href="/css/user_cart.css">
     <title>ユーザー登録画面</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
             <p class="sign">カート一覧</p>
             <div class="main">
                 <ul class="course">
-                    <li >
+                    <li th:each="cart:${}">
                         <a href="">
                             <div class="course-list">
                                 <div class="course-img">
