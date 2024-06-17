@@ -23,6 +23,12 @@ public class UserCartController {
 	@Autowired
 	private LessonService lessonService;
 	
+	// カート画面の表示
+	@GetMapping("/user/cart")
+	public String getUsercartlistPage() {
+		return "user_cart.html";
+	}	
+	
 	//カートの追加機能
 	@PostMapping("/user/cart/process")
 	public String getCartPage(Model model,@RequestParam Long lessonId) {
