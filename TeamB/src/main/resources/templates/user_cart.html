@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/user_cart.css">
+    <link rel="stylesheet" href="user_cart.css">
     <title>ユーザー登録画面</title>
 </head>
 <body>
@@ -12,11 +12,16 @@
         <nav class="header">
             <div class="header-inner">
                 <ul class="header-list">
-                    <li class="listItem" th:text="${userName}">ユーザー名(仮)</li>
-                    <li class="listItem"><a th:href="@{/user/course/all}">講座一覧</a></li>
-                    <li class="listItem"><a th:href="@{/user/cart}">カートへ</a></li>
-                    <li class="listItem"><a th:href="@{#}">購入履歴</a></li>
-                    <li class="listItem"><a th:href="@{/user/login}">ログアウト</a></li>
+                    <!--<li class="listItem" th:text="${}">ユーザー名(仮)</li>
+                    <li class="listItem"><a th:href="@{}">講座一覧</a></li>
+                    <li class="listItem"><a th:href="@{}">カートへ</a></li>
+                    <li class="listItem"><a th:href="@{}">購入履歴</a></li>
+                    <li class="listItem"><a th:href="@{}">ログアウト</a></li-->
+					<li class="listItem">ユーザー名(仮)</li>
+					<li class="listItem"><a>講座一覧</a></li>
+					<li class="listItem"><a>カートへ</a></li>
+					<li class="listItem"><a>購入履歴</a></li>
+					<li class="listItem"><a>ログアウト</a></li>
                 </ul>
             </div>
         </nav>
