@@ -17,6 +17,6 @@ public class UserLogoutController {
 	public String userLogout() {
 		//セッションの無効化
 		session.invalidate();
-		return "redirect:/user/login";
+		return "redirect:/user/logout";
 	}
 }
