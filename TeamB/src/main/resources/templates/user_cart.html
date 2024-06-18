@@ -27,17 +27,17 @@
             <p class="sign">カート一覧</p>
             <div class="main">
                 <ul class="course">
-                    <li th:each="cart:${}">
-                        <a href="">
-                            <div class="course-list">
+                    <li th:each="cart:${cartList}">
+                        <a th:href="@{/user/course/{lessonId}(lessonId=${cart.lessonId})}">	
+							<div class="course-list">
                                 <div class="course-img">
-                                    <img src="image/a.jpg" alt="">
+                                    <img th:src="@{/course-img/{imagePath}(imagePath=${cart.imageName})}" alt="">
                                 </div>
                                 <div class="frame">
                                     <div class="contents">
-                                        <p>テスト1</p><br>
-                                        <p>テスト2</p><br>
-                                        <p>テスト3</p>
+                                        <p th:text="${cart.lessonName}"></p><br>
+                                        <p th:text="￥ + ${cart.lessonFee}"></p><br>
+                                        <p th:text="${cart.lessonDetail}"></p>
                                     </div>
                                     <div>
                                         <button class="delete" >消去</button>
