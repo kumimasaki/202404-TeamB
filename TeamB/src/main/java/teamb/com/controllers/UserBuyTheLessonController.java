@@ -34,7 +34,6 @@ public class UserBuyTheLessonController {
 			cartList.add(lesson);
 			model.addAttribute("cartList",cartList);
 			return"user_Request.html";
-			
 		}
 	}
 	

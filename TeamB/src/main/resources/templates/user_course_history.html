@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>応募済み講座一覧</title>
-    <link rel="stylesheet" href="user_course_history.css">
+    <link rel="stylesheet" th:href="@{user_course_history.css}">
 </head>
 <body>
     <header>
         <nav class="header">
             <div class="header-inner">
                 <ul class="header-list">
-                    <li class="listItem" th:text="${}">ユーザー名(仮)</li>
-                    <li class="listItem"><a th:href="@{}">講座一覧</a></li>
-                    <li class="listItem"><a th:href="@{}">カートへ</a></li>
-                    <li class="listItem"><a th:href="@{}">購入履歴</a></li>
-                    <li class="listItem"><a th:href="@{}">ログアウト</a></li>
+                    <li class="listItem" th:text="${userName}">ユーザー名(仮)</li>
+                    <li class="listItem"><a th:href="@{#}">講座一覧</a></li>
+                    <li class="listItem"><a th:href="@{#}">カートへ</a></li>
+                    <li class="listItem"><a th:href="@{#}">購入履歴</a></li>
+                    <li class="listItem"><a th:href="@{#}">ログアウト</a></li>
                 </ul>
             </div>
         </nav>
