@@ -19,47 +19,52 @@ import teamb.com.services.LessonService;
 public class UserCartController {
 	@Autowired
 	private HttpSession session;
-	
+
 	@Autowired
 	private LessonService lessonService;
-	
+
 	// カート画面の表示
 	@GetMapping("/user/cart")
 	public String getUsercartlistPage() {
 		return "user_cart.html";
-	}	
-	
-	//カートの追加機能
+	}
+
+	// カートの追加機能
 	@PostMapping("/user/cart/process")
-	public String getCartPage(Model model,@RequestParam Long lessonId) {
+	public String getCartPage(Model model, @RequestParam Long lessonId) {
 		Users user = (Users) session.getAttribute("loginUserInfo");
-		if(user==null) {
+		if (user == null) {
 			return "redirect:/user/login";
-		}else {	
-			if(session.getAttribute("cart")==null) {
+		} else {
+			if (session.getAttribute("cart") == null) {
 				List<Lesson> cartList = new ArrayList<Lesson>();
-				//商品の情報を取得
+				// 商品の情報を取得
 				Lesson lesson = lessonService.lessonEditCheck(lessonId);
 				cartList.add(lesson);
 				session.setAttribute("cart", cartList);
-				model.addAttribute("cartList",cartList);
+				model.addAttribute("cartList", cartList);
 				return "user_cart.html";
-			}else {
-				//２回目の処理
-				//sessionからカートの情報を取得する
+			} else {
+				// ２回目の処理
+				// sessionからカートの情報を取得する
 				List<Lesson> cartList = (List<Lesson>) session.getAttribute("cart");
+				// 商品の情報を取得
+				Lesson lesson = lessonService.lessonEditCheck(lessonId);
+				boolean result = false;
 				for (Lesson a : cartList) {
-					if (!a.getLessonId().equals(lessonId)) {
-						//商品の情報を取得
-						Lesson lesson = lessonService.lessonEditCheck(lessonId);
-						cartList.add(lesson);
-					}
+					if (a.getLessonId().equals(lessonId)) {
+						result=true;
+						break;
+					} 
 				}
-				model.addAttribute("cartList",cartList);
-				return"user_cart.html";
-				
+				if(!result) {
+					cartList.add(lesson);	
+				}
+				model.addAttribute("cartList", cartList);
+				return "user_cart.html";
+
 			}
 		}
 	}
-	
+
 }
