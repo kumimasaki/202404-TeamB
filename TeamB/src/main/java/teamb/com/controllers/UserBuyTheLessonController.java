@@ -45,6 +45,7 @@ public class UserBuyTheLessonController {
 			return "redirect:/user/login";
 		}else {
 			List<Lesson> cartList = (List<Lesson>) session.getAttribute("cart");
+
 			cartList.clear();
 			return"user_RequestSuccess.html";
 		}
