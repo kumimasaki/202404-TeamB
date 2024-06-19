@@ -3,7 +3,6 @@ package teamb.com.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.servlet.http.HttpSession;
 import teamb.com.models.entity.Lesson;
+import teamb.com.models.entity.Users;
 
 @Controller
 public class UserCartDeleteController {
@@ -20,7 +20,7 @@ public class UserCartDeleteController {
 	@PostMapping("/user/cart/process/delete")
 	public String cartDelent(Model model, @RequestParam Long lessonId) {
 		// セッションからログインしている人の情報をuserという変数に格納
-		User user = (User) session.getAttribute("loginUserInfo");
+		Users user = (Users) session.getAttribute("loginUserInfo");
 		// もし user == null ログイン画面に戻る
 		if (user == null) {
 			return "redirect:/user/login";
@@ -36,7 +36,7 @@ public class UserCartDeleteController {
 				}
 				index++;
 			}
-			return "redirect：/user/cart/process";
+			return "redirect:/user/cart";
 		}
 	}
 }
