@@ -5,8 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import jakarta.servlet.http.HttpSession;
 import teamb.com.models.entity.Lesson;
@@ -14,25 +13,26 @@ import teamb.com.models.entity.Users;
 import teamb.com.services.LessonService;
 
 @Controller
-public class UserBuyTheLessonController {
+public class UserHistoryController {
+
 	@Autowired
 	private HttpSession session;
 	
 	@Autowired
 	private LessonService lessonService;
-	//購入機能
-	@PostMapping()
-	public String BuyLesson(Model model,@RequestParam Long lessonId) {
+	
+	@GetMapping("/user/history")
+	public String getUserCourseAll(Model model) {
+		
 		Users user = (Users) session.getAttribute("loginUserInfo");
+		
 		if(user==null) {
 			return "redirect:/user/login";
 		}else {
-			List<Lesson> cartList = (List<Lesson>) session.getAttribute("cart");
-			//商品の情報を取得
-			Lesson lesson = lessonService.lessonEditCheck(lessonId);
-			cartList.add(lesson);
-			model.addAttribute("cartList",cartList);
-			return"user_Request.html";
+			List<Lesson> historyList = (List<Lesson>) session.getAttribute("cartList");
+			
+			model.addAttribute("historyList",historyList);
+			return"user_course_history.html";
 		}
-	} 
+	}
 }
