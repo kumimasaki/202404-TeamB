@@ -48,13 +48,17 @@ public class UserCartController {
 				//２回目の処理
 				//sessionからカートの情報を取得する
 				List<Lesson> cartList = (List<Lesson>) session.getAttribute("cart");
-				//商品の情報を取得
-				Lesson lesson = lessonService.lessonEditCheck(lessonId);
-				cartList.add(lesson);
+				for (Lesson a : cartList) {
+					if (!a.getLessonId().equals(lessonId)) {
+						//商品の情報を取得
+						Lesson lesson = lessonService.lessonEditCheck(lessonId);
+						cartList.add(lesson);
+					}
+				}
 				model.addAttribute("cartList",cartList);
 				return"user_cart.html";
+				
 			}
-					
 		}
 	}
 	
