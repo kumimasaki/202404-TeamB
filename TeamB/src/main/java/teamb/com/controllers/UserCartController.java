@@ -25,7 +25,17 @@ public class UserCartController {
 
 	// カート画面の表示
 	@GetMapping("/user/cart")
-	public String getUsercartlistPage() {
+	public String getUsercartlistPage(Model model) {
+		Users user = (Users) session.getAttribute("loginUserInfo");
+		if (user == null) {
+			return "redirect:/user/login";
+		} else {
+			// sessionからカートの情報を取得する
+			List<Lesson> cartList = (List<Lesson>) session.getAttribute("cart");
+			if(!cartList.isEmpty()) {
+				model.addAttribute("cartList", cartList);
+			}
+		}
 		return "user_cart.html";
 	}
 

@@ -16,8 +16,10 @@ import teamb.com.models.entity.Users;
 public class UserCartDeleteController {
 	@Autowired
 	private HttpSession session;
+	
 
-	@PostMapping("/user/cart/process/delete")
+	
+	@PostMapping("/user/cart/delete/process")
 	public String cartDelent(Model model, @RequestParam Long lessonId) {
 		// セッションからログインしている人の情報をuserという変数に格納
 		Users user = (Users) session.getAttribute("loginUserInfo");
