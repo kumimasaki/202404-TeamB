@@ -31,8 +31,17 @@ public class UserBuyTheLessonController {
 			List<Lesson> cartList = (List<Lesson>) session.getAttribute("cart");
 			//商品の情報を取得
 			Lesson lesson = lessonService.lessonEditCheck(lessonId);
-			cartList.add(lesson);
-			model.addAttribute("cartList",cartList);
+			boolean result = false;
+			for (Lesson a : cartList) {
+				if (a.getLessonId().equals(lessonId)) {
+					result=true;
+					break;
+				} 
+			}
+			if(!result) {
+				cartList.add(lesson);	
+			}
+			model.addAttribute("cartList", cartList);
 			return"user_Request.html";
 		}
 	}

@@ -47,15 +47,16 @@
 											<button class="delete">消去</button>
 										</div>
 									</form>
-									<form th:action="@{/user/cart/buyLesson/process}" method="post">
-										<div>
-											<input type="hidden" name="lessonId" th:value="${cart.lessonId}">
-											<button class="purchase">購入</button>
-										</div>
-									</form>
+									
 								</div>
 							</div>
 						</a>
+						<form th:action="@{/user/cart/buyLesson/process}" method="post">
+								<div>
+										<input type="hidden" name="lessonId" th:value="${cart.lessonId}">
+										<button class="purchase">購入</button>
+								</div>
+						</form>
 					</li>
 				</ul>
 			</div>
