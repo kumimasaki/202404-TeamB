@@ -27,7 +27,7 @@
             </div>
             <article>
                 <ul class="requests">
-                    <li class="requests-li" th:each="lesson:${lessonList}">
+                    <li class="requests-li" >
                         <div class="lesson-img-form">
                             <img class="lesson-img" th:src="@{/course-img/{imagePath}(imagePath=${lesson.imageName})}" alt="">
                         </div>
