@@ -29,9 +29,9 @@ public class UserHistoryController {
 		if(user==null) {
 			return "redirect:/user/login";
 		}else {
-			List<Lesson> historyList = (List<Lesson>) session.getAttribute("cartList");
-			
-			model.addAttribute("historyList",historyList);
+
+			List<Lesson> historyList = lessonService.selectAllLessonList(null);
+			model.addAttribute("historyList", historyList);
 			return"user_course_history.html";
 		}
 	}
