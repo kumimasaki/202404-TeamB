@@ -31,12 +31,15 @@ public class UserBuyTheLessonController {
 			return "redirect:/user/login";
 		}else {
 			List<Lesson> cartList = (List<Lesson>) session.getAttribute("cart");
+			List<Lesson> historyList = (List<Lesson>) session.getAttribute("cart");
 			
 			//商品の情報を取得
 			Lesson lesson = lessonService.lessonEditCheck(lessonId);
 			cartList.add(lesson);
+			historyList.add(lesson);
 			
 			model.addAttribute("cartList",cartList);
+			model.addAttribute("historyList",historyList);
 			return"user_Request.html";
 		}
 	}
