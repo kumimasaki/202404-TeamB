@@ -27,7 +27,11 @@ public class AdminLoginController {
  //ログイン処理
  @PostMapping("/admin/login/process")
  public String adminLoginProcess(@RequestParam String email,@RequestParam String password) {
+	//loginCheckメソッドを呼び出した結果をadminに格納する
 	 Admin admin = adminService.loginCheck(email, password);
+	//もし、admin==null、adminLogin.htmlへ行く
+	//そうでない
+	//　"/admin/course"へ行く
 	 if(admin == null) {
 		 return "adminLogin.html";
 	 }else {
