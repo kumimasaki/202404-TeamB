@@ -13,7 +13,7 @@ public interface ItemDao extends JpaRepository<TransactionItem , Long>{
 	//保存処理と更新処理
 	TransactionItem save(TransactionItem transactionItem);
 	
-	@Query(value = "SELECT "
+	@Query(value = "SELECT l.lesson_id "
 				 + "FROM transaction_item i "
 				 + "LEFT JOIN lesson l ON l.lesson_id = i.lesson_id "
 				 + "WHERE l.lesson_id = i.lesson_id "

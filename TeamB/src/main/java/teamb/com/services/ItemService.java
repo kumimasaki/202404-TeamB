@@ -7,14 +7,20 @@ import org.springframework.stereotype.Service;
 
 import teamb.com.models.dao.ItemDao;
 import teamb.com.models.entity.TransactionItem;
-import teamb.com.models.entity.Users;
 
 @Service
 public class ItemService {
 	@Autowired
 	private ItemDao itemDao;
 	
-
+	public boolean createItem(Long lessonId, Long historyId) {
+		if(itemDao.findAll() == null) {
+			itemDao.save(new TransactionItem(lessonId, historyId));
+			return true;
+		} else {
+			return false;
+		}
+	}
 	
 	
 	//商品一覧のチェック

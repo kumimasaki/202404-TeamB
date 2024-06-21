@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>応募済み講座一覧</title>
-    <link rel="stylesheet" th:href="@{user_course_history.css}">
+    <link rel="stylesheet" th:href="@{/css/user_course_history.css}">
 </head>
 <body>
     <header>
@@ -12,10 +12,10 @@
             <div class="header-inner">
                 <ul class="header-list">
                     <li class="listItem" th:text="${userName}">ユーザー名(仮)</li>
-                    <li class="listItem"><a th:href="@{#}">講座一覧</a></li>
-                    <li class="listItem"><a th:href="@{#}">カートへ</a></li>
-                    <li class="listItem"><a th:href="@{#}">購入履歴</a></li>
-                    <li class="listItem"><a th:href="@{#}">ログアウト</a></li>
+                    <li class="listItem"><a th:href="@{/user/course/all}">講座一覧</a></li>
+                    <li class="listItem"><a th:href="@{/user/cart}">カートへ</a></li>
+                    <li class="listItem"><a th:href="@{/user/history}">購入履歴</a></li>
+                    <li class="listItem"><a th:href="@{/user/login}">ログアウト</a></li>
                 </ul>
             </div>
         </nav>
@@ -27,27 +27,19 @@
             </div>
             <article>
                 <ul class="requests">
-                    <li class="requests-li" th:each="blog:${blogList}">
-                        <img class="lesson-img" th:src="@{/lesson-img/{imagePath}(imagePath=${lesson.imageName})}" alt="">
-                        <img class="lesson-img" src="java.jpg" alt=""> <!--このimgはテスト用、実装する時を削除してください-->
-                        <div class="requests-form">
-                            <p class="requests-p" th:text="${lesson.lessonDate}">0000/00/00(何曜日)</p>  <!--文字はテスト用、実装する時「123」を削除してください-->
-                        </div>
+                    <li class="requests-li"  th:each="lesson:${lessonList}">
+                        <img class="lesson-img" th:src="@{/course-img/{imagePath}(imagePath=${lesson.imageName})}" alt="">
                         <div class="requests-form-time">
-                            <p class="requests-p-time" th:text="${lesson.startTime}">13:00</p>  <!--文字はテスト用、実装する時「13:00」を削除してください-->
+                            <p class="requests-p-time" th:text="${lesson.startTime}"></p>
                             <p class="requests-p-time">~</p>
-                            <p class="requests-p-time" th:text="${lesson.finishTime}">14:00</p>  <!--文字はテスト用、実装する時「14:00」を削除してください-->
+                            <p class="requests-p-time" th:text="${lesson.finishTime}"></p>
                         </div>
                         <div class="requests-form">
-                            <p class="requests-p" th:text="${lesson.lessonDetail}">Java</p>  <!--文字はテスト用、実装する時「Java」を削除してください-->
+                            <p class="requests-p" th:text="${lesson.lessonDetail}"></p>
                         </div>
                         <div class="requests-form">
-                            <p class="requests-p" th:text="${lesson.lessonFee}">12800</p>  <!--文字はテスト用、実装する時「12800」を削除してください-->
+                            <p class="requests-p" th:text="${lesson.lessonFee}"></p>
                             <p class="requests-p">円</p>
-                        </div>
-                        <div class="requests-form">
-                            <p class="requests-p">購入日：</p>  <!--文字はテスト用、実装する時「12800」を削除してください-->
-                            <p class="requests-p">0000/00/00(何曜日)</p>
                         </div>
                     </li>
                 </ul>
