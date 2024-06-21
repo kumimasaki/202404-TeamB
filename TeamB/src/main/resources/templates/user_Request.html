@@ -49,16 +49,16 @@
                                 <p class="requests-p" th:text="${cart.lessonFee}">12800</p>  <!--文字はテスト用、実装する時「12800」を削除してください-->
                                 <p class="requests-p">円</p>
                             </div>
+				            <div class="user-request-btns">
+				                <button class="back-btn" onclick="history.back();" type="button">戻る</button>
+								<form th:action="@{/user/request/confirm/process}" method="get">
+									<input type="hidden" name="lessonId" th:value="${cart.lessonId}">
+				                	<button class="success-btn">申し込み内容を確認</button>
+								</form>
+				            </div>
                     </li>
                 </ul>
             </article>
-            <div class="user-request-btns">
-                <button class="back-btn" onclick="history.back();" type="button">戻る</button>
-				<form th:action="@{/user/request/confirm/process}" method="get">
-					<!--input type="hidden" name="lessonId" th:value="${cart.lessonId}"-->
-                	<button class="success-btn">申し込み内容を確認</button>
-				</form>
-            </div>
         </div>
     </main>
     <footer>

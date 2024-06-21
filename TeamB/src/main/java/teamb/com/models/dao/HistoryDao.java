@@ -15,7 +15,7 @@ public interface HistoryDao extends JpaRepository<TransactionHistory , Long>{
 	List<TransactionHistory>findAll();
 	
 	// 用途、商品の登録チェックｎ使用（同じ商品が登録されないようにチェック）
-	TransactionHistory findByHistoryId(Long historyId);
+	TransactionHistory findByUserId(Long userId);
 
 	// 用途、削除に使用
 	void deleteByHistoryId(Long historyId);

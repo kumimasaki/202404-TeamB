@@ -24,21 +24,25 @@ public class HistoryService {
 		}
 	}
 	
+	public TransactionHistory selectHistoryId(Long userId){
+		if(userId == null) {
+			return null;
+		}else {
+			return historyDao.findByUserId(userId);
+		}
+	}
+	
 	//商品の登録処理チェック
 	//もし、findByHistoryIdが==nullだったら、
 	//保存処理
 	//true
 	//そうでない場合false
-	public boolean createHistory(Long historyId ,
-			Long userId ,
-			String amount ,
-			String historyDate) {
-		if(historyDao.findByHistoryId(historyId)==null) {
-			historyDao.save(new TransactionHistory(userId , amount , historyDate));
-			return true;
-		}else {
-			return false;
-		}
+	public void createHistory(
+		Long userId ,
+		String amount ,
+		String historyDate) {
+
+		historyDao.save(new TransactionHistory(userId , amount , historyDate));
 	}
 	
 	
