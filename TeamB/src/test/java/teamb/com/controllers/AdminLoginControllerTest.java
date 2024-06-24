@@ -47,7 +47,6 @@ public class AdminLoginControllerTest {
 		// ログイン失敗： adminEmail="batu@test.com", password="1234abcd"
 		when(adminService.loginCheck(eq("batu@test.com"), any())).thenReturn(null);
 
-	
 	}
 	
 	// ログイン画面を正しく取得するテスト

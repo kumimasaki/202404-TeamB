@@ -30,17 +30,15 @@ public class UserLoginController {
 	@PostMapping("/user/login/process")
 	public String userLoginProcess(@RequestParam String userEmail, @RequestParam String userPassword) {
 
-		// loginCheck メソッドを呼び出してその結果を admin という変数に格納
+		// loginCheck メソッドを呼び出してその結果を user という変数に格納
 		Users user = userService.loginCheck(userEmail, userPassword);
 
 		// もし、user == null ログイン画面にとどまる
 		// そうでない場合は、session にログイン情報に保存
 		// 講座一覧画面にリダイレクト /user/course/all
 		if (user == null) {
-
 			return "user_login.html";
 		} else {
-
 			session.setAttribute("loginUserInfo", user);
 			return "redirect:/user/course/all";
 		}
