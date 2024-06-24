@@ -30,7 +30,6 @@
 			<div class="main">
 				<ul class="course">
 					<li th:each="cart:${cartList}">
-						<a th:href="@{/user/course/{lessonId}(lessonId=${cart.lessonId})}">
 							<div class="course-list">
 								<div class="course-img">
 									<img th:src="@{/course-img/{imagePath}(imagePath=${cart.imageName})}" alt="">
@@ -50,7 +49,6 @@
 									
 								</div>
 							</div>
-						</a>
 						<form th:action="@{/user/cart/buyLesson/process}" method="post">
 								<div>
 										<input type="hidden" name="lessonId" th:value="${cart.lessonId}">
