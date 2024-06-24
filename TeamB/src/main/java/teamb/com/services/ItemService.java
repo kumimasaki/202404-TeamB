@@ -13,13 +13,10 @@ public class ItemService {
 	@Autowired
 	private ItemDao itemDao;
 	
-	public boolean createItem(Long lessonId, Long historyId) {
-		if(itemDao.findAll() == null) {
-			itemDao.save(new TransactionItem(lessonId, historyId));
-			return true;
-		} else {
-			return false;
-		}
+	public void createItem(Long lessonId, Long historyId) {
+
+		itemDao.save(new TransactionItem(lessonId, historyId));
+
 	}
 	
 	

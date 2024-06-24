@@ -73,10 +73,11 @@ public class UserBuyTheLessonController {
 			historyService.createHistory(user.getUserId(), "0", "2024");
 			
 			TransactionHistory history = historyService.selectHistoryId(user.getUserId());
-			
+
 			for(Lesson lesson : cartList) {
 				itemService.createItem(lesson.getLessonId(), history.getHistoryId());
 			}
+
 			cartList.clear();
 			
 			return"user_RequestSuccess.html";

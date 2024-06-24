@@ -34,7 +34,7 @@ public class UserHistoryController {
 			return "redirect:/user/login";
 		}else {
 //			Lesson lesson = lessonDao.findByLessonId(null);
-			List<Lesson> lessonList = lessonDao.findAll();
+			List<Lesson> lessonList = lessonDao.findByUserId(user.getUserId());
 			model.addAttribute("lessonList", lessonList);			
 			model.addAttribute("userName", user.getUserName());
 			return"user_course_history.html";
