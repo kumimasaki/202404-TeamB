@@ -3,6 +3,7 @@ package teamb.com.models.dao;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import jakarta.transaction.Transactional;
@@ -25,4 +26,7 @@ public interface LessonDao extends JpaRepository<Lesson, Long> {
 	
 	//削除する時に使う
 	void deleteByLessonId(Long lessonId);
+	
+	@Query(value="select c.* from transaction_history a join transaction_item b on a.history_id=b.history_id join lesson c on b.lesson_id=c.lesson_id where user_id=?1",nativeQuery = true)
+	List<Lesson>findByUserId(Long userId);
 }
